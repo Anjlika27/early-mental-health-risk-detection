@@ -1,0 +1,45 @@
+{
+    "project": "MindfulPath",
+    "model_name": "XGBoost Lifestyle Stress Regressor",
+    "model_type": "regression",
+    "target": "stress_level",
+    "features": [
+        "daily_screen_time_hours",
+        "phone_usage_before_sleep_minutes",
+        "sleep_duration_hours",
+        "sleep_quality_score",
+        "caffeine_intake_cups",
+        "physical_activity_minutes"
+    ],
+    "excluded_features": [
+        "user_id",
+        "notifications_received_per_day",
+        "mental_fatigue_score",
+        "age",
+        "gender",
+        "occupation"
+    ],
+    "training_records": 12000,
+    "testing_records": 3000,
+    "split": "80:20",
+    "cross_validation": "5-fold",
+    "cv_mae": 0.6145081754624844,
+    "best_parameters": {
+        "max_depth": 4,
+        "min_child_weight": 13.879535259174496,
+        "gamma": 3.5339173588202044,
+        "subsample": 0.7899383744683683,
+        "colsample_bytree": 0.9051361073172366,
+        "learning_rate": 0.08479848600600365,
+        "reg_alpha": 0.00039459416262528207,
+        "reg_lambda": 59.63737051154818,
+        "max_bin": 128
+    },
+    "boosting_rounds": 202,
+    "test_metrics": {
+        "mae": 0.6209038330348333,
+        "rmse": 0.8564067703944396,
+        "r2": 0.9025429586878496
+    },
+    "dataset_note": "Synthetic dataset. External validation required."
+}
