@@ -35,3 +35,6 @@ __pycache__/
 # Local backups
 *.backup.html
 index.before-journal-removal.html
+
+# Local MentalBERT model checkpoint
+/backend/models/
