@@ -44,7 +44,7 @@ svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke
 .icon{position:relative;display:grid;place-items:center;width:36px;height:36px;border-radius:10px;border:0;background:none;color:var(--soft);cursor:pointer}
 .icon:hover{background:var(--paper)}
 .icon[data-alert="1"]::after{content:"";position:absolute;top:7px;right:8px;width:8px;height:8px;border-radius:50%;background:var(--pink);border:2px solid var(--card)}
-.avatar{width:34px;height:34px;border-radius:50%;background:var(--accsoft);color:var(--acc);display:grid;place-items:center;font-weight:700;font-size:13px}
+.avatar{border:0;cursor:pointer;padding:0;font:inherit;appearance:none;width:34px;height:34px;border-radius:50%;background:var(--accsoft);color:var(--acc);display:grid;place-items:center;font-weight:700;font-size:13px}
 .content{max-width:1100px;padding:22px 28px 48px}
 .page{display:none}.page.on{display:block}
 .page>*+*{margin-top:16px}
@@ -283,6 +283,431 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
 .lifestyle-prediction-card .prediction-caution{margin-top:12px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--hero);font-size:12px;color:var(--soft);line-height:1.5}
 @media(max-width:640px){.lifestyle-prediction-card .prediction-chart{height:200px}}
 
+
+/* MindCare Support Resources integration */
+.support-intro{margin-bottom:18px}
+.support-intro .big{margin-bottom:6px}
+.support-intro .lead{max-width:none;margin:0}
+.support-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.support-tile{border:1px solid var(--line);border-radius:16px;padding:18px 14px;text-align:center;min-height:155px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;cursor:pointer}
+.support-tile .tile-icon{font-size:30px;line-height:1.2}
+.support-tile h3{font-size:15px;color:var(--ink);margin:2px 0}
+.support-tile p{font-size:12.5px;color:var(--soft);margin:0}
+.support-tile.prof{background:#eaf6ef}
+.support-tile.self{background:#f1edfb}
+.support-tile.emergency{background:#fbedf1}
+.support-tile:hover{border-color:var(--acc)}
+.psych-panel{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:20px;margin-top:16px}
+.psych-heading{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.psych-pin{font-size:28px}
+.psych-heading h2{font-size:20px}
+.psych-heading p{margin:2px 0 0;color:var(--soft);font-size:13px}
+.psych-search{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.psych-search input{flex:1 1 200px;min-width:0;margin:0;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:12px 16px;font:inherit;color:var(--ink)}
+.psych-search button{border:0;border-radius:30px;background:var(--acc);color:white;padding:0 24px;font:inherit;font-weight:600;cursor:pointer;min-height:44px}
+.psych-search .location-btn{background:var(--accsoft);color:var(--ink);border:1px solid var(--line);border-radius:30px;padding:0 16px;font:inherit;font-weight:600;cursor:pointer}
+.doctor-list{background:var(--paper);color:var(--ink);border-radius:16px;padding:0 14px}
+.maps-link{display:inline-block;margin:0 14px 14px;color:var(--acc);font-weight:700;text-decoration:none}
+.demo-note{font-size:11px;color:var(--soft);margin:10px 2px 0}
+.self-panel{border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:16px;background:linear-gradient(160deg,var(--hero),var(--card) 60%)}
+.self-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:4px}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.sc.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:28px;flex-wrap:wrap}
+.sc .badge{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:color-mix(in srgb,var(--c) 18%,transparent)}
+.sc h3{margin-top:4px}
+.sc .cap{margin:0}
+.gr{display:flex;gap:10px;align-items:center;padding:7px 10px;border-radius:10px;cursor:pointer;font-size:13.5px}
+.gr:hover{background:var(--paper)}
+.gr input{width:18px;height:18px;accent-color:var(--c)}
+.gr input:checked+span{color:var(--soft);text-decoration:line-through}
+.medt{font-size:38px;font-weight:800;letter-spacing:-.02em;color:var(--c);line-height:1.1;margin:4px 0}
+.durs{display:flex;gap:6px;flex-wrap:wrap}
+.sc textarea{margin-top:4px;min-height:84px;resize:vertical}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:7px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line)}
+.tips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+#sec-pro,#sec-people,#sec-breathe{scroll-margin-top:20px}
+@media(max-width:820px){
+  .support-tiles{grid-template-columns:1fr}
+  .support-tile{min-height:0}
+  .psych-panel{padding:14px}
+  .self-grid{grid-template-columns:1fr}
+  .self-panel{padding:14px}
+  .sc.wide{gap:16px}
+  .psych-search button{padding:0 16px}
+}
+@media(max-width:420px){
+  .support-tiles{gap:8px}
+  .support-tile{padding:13px 8px;min-height:140px}
+  .psych-heading h2{font-size:17px}
+}
+
+/* Support tile dark-mode contrast fix */
+@media (prefers-color-scheme:dark) {
+  :root:not([data-theme="light"]) .support-tile {
+    background:var(--card);
+    color:var(--ink);
+  }
+}
+:root[data-theme="dark"] .support-tile {
+  background:var(--card);
+  color:var(--ink);
+}
+.support-tile h3 { color:var(--ink); }
+.support-tile p { color:var(--soft); }
+/* ---------- Screening redesign ---------- */
+
+    .screening-hero-head,
+    .screening-section-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .screening-hero-head h2 {
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .screening-status-tag,
+    .screening-history-count {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      border-radius: 99px;
+      padding: 6px 11px;
+      background: var(--accsoft);
+      color: var(--acc);
+      font-size: 11.5px;
+      font-weight: 700;
+    }
+
+    .screening-note {
+      margin-top: 18px;
+      padding: 11px 13px;
+      border-radius: 10px;
+      background: var(--hero);
+      color: var(--soft);
+      font-size: 12.5px;
+    }
+
+    .screening-instruments {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    #qtabs .tab {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      min-height: 86px;
+      padding: 14px 16px;
+      border-radius: 13px;
+      text-align: left;
+      background: var(--paper);
+      font-size: 13px;
+    }
+
+    #qtabs .tab[aria-selected="true"] {
+      background: var(--accsoft);
+      border: 1px solid var(--acc);
+      color: var(--acc);
+    }
+
+    .screening-tab-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .screening-tab-detail,
+    .screening-tab-progress {
+      color: var(--soft);
+      font-size: 11.5px;
+    }
+
+    .screening-progress {
+      margin: 20px 0 16px;
+    }
+
+    .screening-progress-copy {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    .screening-progress-copy span {
+      color: var(--soft);
+    }
+
+    .screening-progress-track {
+      height: 8px;
+      border-radius: 99px;
+      background: var(--line);
+      overflow: hidden;
+    }
+
+    #qprogressFill {
+      width: 0%;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--acc);
+      transition: width .2s ease;
+    }
+
+    .screening-question-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .q-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 16px;
+    }
+
+    .q-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .q-number {
+      display: grid;
+      place-items: center;
+      flex: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      background: var(--accsoft);
+      color: var(--acc);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .opts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .screening-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--ink);
+      font-size: 12px;
+      line-height: 1.35;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+    }
+
+    .screening-option input {
+      width: 16px;
+      height: 16px;
+      flex: none;
+      margin: 0;
+      accent-color: var(--acc);
+    }
+
+    .screening-option:hover {
+      border-color: var(--acc);
+    }
+
+    .screening-option:has(input:checked) {
+      border-color: var(--acc);
+      background: var(--accsoft);
+      color: var(--acc);
+      font-weight: 600;
+    }
+
+    .screening-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    #qgo:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      filter: saturate(.4);
+    }
+
+    .screening-result {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--hero);
+    }
+
+    .screening-result-layout {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .screening-score-block {
+      min-width: 105px;
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--card);
+      text-align: center;
+    }
+
+    .screening-score-block strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .screening-score-block small {
+      color: var(--soft);
+    }
+
+    .screening-result.low {
+      border-color: var(--teal);
+    }
+
+    .screening-result.moderate {
+      border-color: var(--yel);
+    }
+
+    .screening-result.high {
+      border-color: var(--pink);
+    }
+
+    .screening-severity {
+      display: inline-flex;
+      padding: 5px 11px;
+      border-radius: 99px;
+      background: var(--accsoft);
+      color: var(--acc);
+      font-size: 12px;
+      font-weight: 700;
+      margin: 6px 0;
+    }
+
+    .screening-history-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .screening-history-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px 16px;
+      align-items: center;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--paper);
+    }
+
+    .screening-history-item strong {
+      font-size: 13px;
+    }
+
+    .screening-history-item small {
+      display: block;
+      margin-top: 3px;
+      color: var(--soft);
+      font-size: 11.5px;
+    }
+
+    .screening-history-score {
+      text-align: right;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .screening-history-score small {
+      display: inline;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .screening-history-bar {
+      grid-column: 1 / -1;
+      height: 6px;
+      border-radius: 99px;
+      overflow: hidden;
+      background: var(--line);
+    }
+
+    .screening-history-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--acc);
+    }
+
+    .screening-trend-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .screening-trend-card {
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+    }
+
+    .screening-trend-card .box {
+      height: 190px;
+    }
+
+    @media (max-width: 900px) {
+      .opts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .screening-instruments,
+      .screening-trend-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screening-hero-head,
+      .screening-section-head {
+        flex-direction: column;
+      }
+
+      .screening-option {
+        min-height: 44px;
+      }
+
+      .screening-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -298,10 +723,11 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
     <header class="bar2">
       <div><h1 id="ptitle">Overview</h1><p id="psub"></p></div>
       <div class="tools">
-        <label class="sw"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="search" type="search" placeholder="Search pages…" aria-label="Search pages"></label>
+
         <button class="icon" id="lang" aria-label="Switch language between English and Hindi">हिं</button>
+        <button class="icon" id="themeToggle" aria-label="Switch to dark theme" title="Switch theme"></button>
         <button class="icon" id="bell" aria-label="Notifications"><svg class="i" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0112 0c0 6 2 7 2 7H4s2-1 2-7"/><path d="M10 20a2 2 0 004 0"/></svg></button>
-        <span class="avatar" id="av" aria-hidden="true">S</span>
+        <button class="avatar" id="av" type="button" aria-label="Open profile" title="My profile">S</button>
       </div>
     </header>
 
@@ -461,23 +887,230 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
       </main>
 
       <main class="page" id="p-journal">
-        <section class="card"><h3>My entries</h3><div id="entries"><p class="cap">Nothing here yet. Write your first one in Daily check-in.</p></div></section>
-        <section class="card"><h3>Day by day</h3><div class="tabs" role="tablist" id="tabs"></div><div class="box"><canvas id="cHab" role="img" aria-label="Bar chart of a daily habit"></canvas></div><p class="cap">Pink bars are days that drifted well away from your usual.</p></section>
-        <section class="card"><h3>This week and last week</h3><div class="box"><canvas id="cWk" role="img" aria-label="Weekly comparison"></canvas></div><p class="cap">100% is your normal. Taller means more than usual.</p></section>
-      </main>
 
-      <main class="page" id="p-support">
-        <section class="card"><h3>People who can help</h3><p class="cap">You don’t need to be in crisis to call. A real voice often helps more than any app.</p>
-          <div class="person" style="--c:var(--pink)"><div><b>Tele-MANAS</b><p>Free tele-counselling from trained listeners, any time of day.</p></div><a class="num" href="tel:14416">14416</a></div>
-          <div class="person" style="--c:var(--blue)"><div><b>KIRAN helpline</b><p>Government mental health rehabilitation helpline.</p></div><a class="num" href="tel:18005990019">1800-599-0019</a></div>
-          <div class="person" style="--c:var(--orange)"><div><b>In immediate danger</b><p>If you or someone near you is unsafe right now, call emergency services.</p></div><a class="num" href="tel:112">112</a></div>
-          <div class="person" style="--c:var(--teal)"><div><b>Your campus counsellor</b><p>A confidential chat at your university. Add your counselling centre’s contact here.</p></div></div>
-          <div class="person" style="--c:var(--yel)"><div><b>A licensed online counsellor</b><p>Video or chat sessions. Connect a verified directory here.</p></div></div></section>
-        <section class="card"><h3>Book a conversation</h3><p class="cap">Send a request to your counselling centre. You choose what to share, and your scores are never attached.</p>
-          <div class="two" style="margin-top:10px"><div><label class="cap" for="bsv">Who would you like to see?</label><br><select class="sel" id="bsv" style="width:100%"><option>Campus counsellor</option><option>Online counsellor</option></select></div><div><label class="cap" for="bwh">Preferred day and time</label><input class="field" id="bwh" style="margin:0" placeholder="e.g. Tuesday afternoon"></div></div>
-          <textarea id="bnote" rows="3" aria-label="Optional note" placeholder="Anything you’d like them to know (optional)"></textarea>
-          <p style="margin:12px 0 0"><button class="btn" id="bgo">Request appointment</button></p><div id="bres"></div></section>
-        <section class="card"><h3>Take one minute to breathe</h3><p class="cap">Breathe in for 4, hold for 4, out for 6. We’ll do five rounds together.</p><div class="breath"><div class="orb" id="orb" aria-hidden="true"></div><div><b id="bl" aria-live="polite">Ready when you are</b><p style="margin:10px 0 0"><button class="btn" id="bb">Start</button></p></div></div><p>Afterwards, drink some water and message one person you trust. “Can we talk?” is enough.</p></section>
+          <!-- Journal writing and analysis at the top -->
+          <section class="card">
+            <h3>Write your journal reflection</h3>
+
+            <p class="cap">
+              Share your thoughts and feelings.
+              MentalBERT will analyse your written reflection.
+            </p>
+
+            <textarea id="jt" rows="5" placeholder="Write about your thoughts, feelings, or anything on your mind..."
+              aria-label="Write your journal reflection"></textarea>
+
+            <p style="margin:12px 0 0">
+              <button class="btn" id="go" type="button">
+                Read my entry
+              </button>
+            </p>
+
+            <div id="res" aria-live="polite"></div>
+          </section>
+
+          <!-- Previously saved journal entries -->
+          <section class="card">
+            <h3>My saved entries</h3>
+
+            <div id="entries">
+              <p class="cap">
+                Nothing here yet. Write your first journal reflection above.
+              </p>
+            </div>
+          </section>
+
+          <!-- Existing journal charts -->
+          <section class="card">
+            <h3>Day by day</h3>
+
+            <div class="tabs" role="tablist" id="tabs"></div>
+
+            <div class="box">
+              <canvas id="cHab" role="img" aria-label="Bar chart of a daily habit"></canvas>
+            </div>
+
+            <p class="cap">
+              Pink bars are days that drifted well away from your usual.
+            </p>
+          </section>
+
+          <section class="card">
+            <h3>This week and last week</h3>
+
+            <div class="box">
+              <canvas id="cWk" role="img" aria-label="Weekly comparison"></canvas>
+            </div>
+
+            <p class="cap">
+              100% is your normal. Taller means more than usual.
+            </p>
+          </section>
+
+        </main>
+
+            <main class="page" id="p-support">
+        <div class="support-intro">
+          <h2 class="big">Support Resources</h2>
+          <p class="lead">Find trusted help, self-care tools and professional support for your mental well-being.</p>
+        </div>
+
+        <section class="support-tiles" aria-label="Support categories">
+  <div class="support-tile prof" data-go="sec-pro" role="button" tabindex="0">
+    <div class="tile-icon" aria-hidden="true">&#9877;</div>
+    <h3>Talk to a Professional</h3>
+    <p>Find psychiatrists, psychologists and counsellors.</p>
+  </div>
+  <div class="support-tile self" data-go="sec-breathe" role="button" tabindex="0">
+    <div class="tile-icon" aria-hidden="true">&#10047;</div>
+    <h3>Self-Care Resources</h3>
+    <p>Try breathing exercises, meditation and journaling.</p>
+  </div>
+  <div class="support-tile emergency" data-go="sec-people" role="button" tabindex="0">
+    <div class="tile-icon" aria-hidden="true">&#9742;</div>
+    <h3>Emergency Support</h3>
+    <p>Get immediate help from trusted helplines.</p>
+  </div>
+</section>
+
+        <section class="psych-panel" id="sec-pro">
+          <div class="psych-heading">
+            <span class="psych-pin" aria-hidden="true">&#9679;</span>
+            <div>
+              <h2>Find a Psychiatrist Near You</h2>
+              <p>Search by city or PIN code to find nearby mental health professionals.</p>
+            </div>
+          </div>
+          <form class="psych-search" id="psychSearchForm">
+            <input id="psychLocation" type="search" placeholder="Enter city or PIN code" aria-label="City or PIN code">
+            <button type="submit">Search</button>
+            <button type="button" id="useMyLocation" class="location-btn">Use my location</button>
+          </form>
+          <div class="doctor-list" id="doctorResults" aria-live="polite">
+            <p class="cap" id="psychMessage" style="padding:14px;margin:0">
+              Enter a city or PIN code, or use your location to find psychiatrists on Google Maps.
+            </p>
+            <a class="maps-link" id="mapsSearchLink"
+               href="https://www.google.com/maps/search/psychiatrists+near+me/"
+               target="_blank" rel="noopener" hidden>View nearby psychiatrists on Google Maps</a>
+          </div>
+          <p class="demo-note">Search opens Google Maps. Check each clinic's qualifications, address and phone number before contacting.</p>
+        </section>
+
+        <section class="card" id="sec-people">
+          <h3>People who can help</h3>
+          <p class="cap">You don't need to be in crisis to call. A real voice often helps more than any app.</p>
+
+          <div class="person" style="--c:var(--pink)">
+            <div><b>Tele-MANAS</b><p>Free tele-counselling from trained listeners, available any time of day.</p></div>
+            <a class="num" href="tel:14416">14416</a>
+          </div>
+          <div class="person" style="--c:var(--blue)">
+            <div><b>KIRAN helpline</b><p>Government mental health rehabilitation helpline.</p></div>
+            <a class="num" href="tel:18005990019">1800-599-0019</a>
+          </div>
+          <div class="person" style="--c:var(--orange)">
+            <div><b>In immediate danger</b><p>If you or someone near you is unsafe right now, call emergency services.</p></div>
+            <a class="num" href="tel:112">112</a>
+          </div>
+          <div class="person" style="--c:var(--teal)">
+            <div><b>Your campus counsellor</b><p>A confidential chat at your university. Add your counselling centre's contact here.</p></div>
+          </div>
+          <div class="person" style="--c:var(--yel)">
+            <div><b>A licensed online counsellor</b><p>Video or chat sessions. Connect a verified directory here.</p></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Book a conversation</h3>
+          <p class="cap">Send a request to your counselling centre. You choose what to share, and your scores are never attached.</p>
+          <div class="two" style="margin-top:10px">
+            <div>
+              <label class="cap" for="bsv">Who would you like to see?</label><br>
+              <select class="sel" id="bsv" style="width:100%">
+                <option>Campus counsellor</option>
+                <option>Online counsellor</option>
+              </select>
+            </div>
+            <div>
+              <label class="cap" for="bwh">Preferred day and time</label>
+              <input class="field" id="bwh" style="margin:0" placeholder="e.g. Tuesday afternoon">
+            </div>
+          </div>
+          <textarea id="bnote" rows="3" aria-label="Optional note" placeholder="Anything you'd like them to know (optional)"></textarea>
+          <p style="margin:12px 0 0"><button class="btn" id="bgo">Request appointment</button></p>
+          <div id="bres"></div>
+        </section>
+
+        <section class="self-panel" id="sec-breathe">
+          <div class="psych-heading">
+            <span class="psych-pin" aria-hidden="true">&#9679;</span>
+            <div>
+              <h2>Self-Care Resources</h2>
+              <p>Small, gentle practices you can do right now. Pick whichever feels doable.</p>
+            </div>
+          </div>
+
+          <div class="self-grid">
+            <article class="sc wide" style="--c:var(--teal)">
+              <div class="orb" id="orb" aria-hidden="true"></div>
+              <div style="flex:1;min-width:220px">
+                <div class="badge" aria-hidden="true">&#10022;</div>
+                <h3>One-minute breathing</h3>
+                <p class="cap">Breathe in for 4, hold for 4, out for 6. We'll do five rounds together.</p>
+                <p style="margin:12px 0 4px"><b id="bl" aria-live="polite">Ready when you are</b></p>
+                <button class="btn" id="bb">Start</button>
+              </div>
+            </article>
+
+            <article class="sc" style="--c:var(--acc)">
+              <div class="badge" aria-hidden="true">&#10022;</div>
+              <h3>Quiet minutes</h3>
+              <p class="cap">Sit comfortably, close your eyes and let the timer hold the time for you.</p>
+              <div class="durs" id="med_dur">
+                <button class="tab" data-m="1" aria-selected="true">1 min</button>
+                <button class="tab" data-m="3" aria-selected="false">3 min</button>
+                <button class="tab" data-m="5" aria-selected="false">5 min</button>
+              </div>
+              <div class="medt" id="med_t" aria-live="off">01:00</div>
+              <div class="bar" style="margin:0 0 6px"><div id="med_bar" style="width:0;background:var(--acc)"></div></div>
+              <button class="btn" id="med_go">Start</button>
+            </article>
+
+            <article class="sc" style="--c:var(--orange)">
+              <div class="badge" aria-hidden="true">&#10022;</div>
+              <h3>5-4-3-2-1 grounding</h3>
+              <p class="cap">For racing thoughts. Notice, one sense at a time:</p>
+              <div id="gr_list">
+                <label class="gr"><input type="checkbox"><span>5 things you can see</span></label>
+                <label class="gr"><input type="checkbox"><span>4 things you can feel</span></label>
+                <label class="gr"><input type="checkbox"><span>3 things you can hear</span></label>
+                <label class="gr"><input type="checkbox"><span>2 things you can smell</span></label>
+                <label class="gr"><input type="checkbox"><span>1 thing you can taste</span></label>
+              </div>
+              <p class="cap"><span id="gr_n">0 of 5</span> | <button class="btn ghost" id="gr_reset" style="padding:3px 10px">Reset</button>
+              </p>
+            </article>
+
+            <article class="sc" style="--c:var(--pink)">
+              <div class="badge" aria-hidden="true">&#10022;</div>
+              <h3>Gratitude note</h3>
+              <p class="cap" id="gt_p">One good thing from today, however small.</p>
+              <textarea class="field" id="gt" rows="3" aria-label="Gratitude note" maxlength="400" placeholder="Write a line or two..."></textarea>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <button class="btn" id="gt_save">Save to my journal</button>
+                <button class="btn ghost" id="gt_new">New prompt</button>
+              </div>
+            </article>
+          </div>
+
+          <div class="tips" aria-label="Quick ideas">
+  <span class="pill">Drink a glass of water</span>
+  <span class="pill">Step outside for five minutes</span>
+  <span class="pill">Stretch your shoulders</span>
+  <span class="pill">Message one person you trust. Can we talk is enough.</span>
+</div>
+        </section>
       </main>
 
       <main class="page" id="p-profile">
@@ -500,26 +1133,100 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
       </main>
 
       <main class="page" id="p-screening">
-        <section class="card"><h3>Quick questionnaires</h3><p class="cap">Two widely used screening questionnaires. Do one every couple of weeks to cross-check what MindCare notices. They are not a diagnosis.</p>
-          <div class="tabs" id="qtabs"></div><p class="cap" style="margin-top:12px">Over the last 2 weeks, how often have you been bothered by the following?</p>
-          <div id="qlist"></div><p style="margin:14px 0 0"><button class="btn" id="qgo">See my score</button></p><div id="qres"></div></section>
-      </main>
-      <main class="page" id="p-campus">
-        <section class="card"><h3>Campus view</h3><p class="cap">Anonymous group trends for a college or wellness team. Individual data is never shown, and any group smaller than 10 people is hidden. The figures are a simulated group, for demonstration.</p>
-          <label class="cap" for="dept" style="display:block;margin-top:10px">Group</label><select class="sel" id="dept"></select></section>
-        <section class="stats" id="cstats"></section>
-        <section class="two" id="cohwrap"><div class="card"><h3>This week’s weather across the group</h3><div class="box"><canvas id="cCoh" role="img" aria-label="Pie chart of group weather"></canvas></div></div>
-          <div class="card"><h3>Share needing support, by week</h3><div class="box"><canvas id="cTr" role="img" aria-label="Line chart of share needing support"></canvas></div></div></section>
-      </main>
-      <main class="page" id="p-results">
-        <section class="card"><h3>Model results</h3><p class="cap">How the text model (MentalBERT) and the behaviour model (BiLSTM) did on the held-out Dreaddit test set. Paste the numbers from your notebook. Nothing is shown until you add real results.</p>
-          <textarea id="mj" rows="7" aria-label="Model results as JSON"></textarea>
-          <p style="margin:12px 0 0"><button class="btn" id="mgo">Show results</button> <button class="btn ghost" id="mfmt">Insert example format</button></p><div id="mres"></div></section>
-        <section class="card"><h3>Safety review of crisis wording</h3><p class="cap">The words that trigger the support message, and the message itself, should be checked by a trained counsellor before real users see them.</p>
-          <p><b>Status:</b> <span id="sst"></span></p><p class="cap" style="margin:8px 0 4px">Trigger phrases</p><div id="sph" class="lg"></div>
-          <p class="cap" style="margin-top:10px">Message shown: “You don’t have to handle this alone. Call Tele-MANAS on 14416 any time. If you’re in immediate danger, call 112.”</p>
-          <div class="two" style="margin-top:10px"><input class="field" id="srv" style="margin:0" placeholder="Reviewer’s name" aria-label="Reviewer name"><button class="btn" id="srb">Mark as reviewed</button></div></section>
-      </main>
+
+          <section class="card screening-intro">
+            <div class="screening-hero-head">
+              <div>
+                <p class="eyebrow">SELF-REPORTED ASSESSMENT</p>
+                <h2>Understand how you've been feeling</h2>
+                <p class="cap">
+                  Answer questions about your experiences over the past two weeks.
+                  Your responses help identify symptoms that may deserve attention.
+                </p>
+              </div>
+              <span class="screening-status-tag">Not a diagnosis</span>
+            </div>
+
+            <div class="screening-note">
+              Choose one questionnaire at a time. You can complete both independently.
+            </div>
+
+            <div class="screening-instruments" id="qtabs"></div>
+          </section>
+
+          <section class="card">
+            <div class="screening-section-head">
+              <div>
+                <h3 id="qsectionTitle">PHQ-9 · Depression screening</h3>
+                <p class="cap">
+                  Over the last 2 weeks, how often have you been bothered by the following?
+                </p>
+              </div>
+            </div>
+
+            <div class="screening-progress">
+              <div class="screening-progress-copy">
+                <b id="qprogressLabel">Your progress</b>
+                <span id="qprogressCount">0 of 9 answered</span>
+              </div>
+              <div class="screening-progress-track" role="progressbar" id="qprogressBar"
+                aria-label="Questionnaire completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div id="qprogressFill"></div>
+              </div>
+            </div>
+
+            <div id="qlist" class="screening-question-list"></div>
+
+            <div class="screening-actions">
+              <span class="cap" id="qanswerHint">Answer every question to view your result.</span>
+              <button class="btn" id="qgo" disabled>See my score</button>
+            </div>
+
+            <div id="qres" aria-live="polite"></div>
+          </section>
+
+          <section class="card">
+            <div class="screening-section-head">
+              <div>
+                <h3>Your screening history</h3>
+                <p class="cap">
+                  Review previous completed questionnaires and notice changes over time.
+                </p>
+              </div>
+              <span class="screening-history-count" id="qhistoryCount">0 completed</span>
+            </div>
+
+            <div id="qhistoryList" class="screening-history-list">
+              <p class="cap">Your completed screening results will appear here.</p>
+            </div>
+
+            <div id="qhistoryTrends" class="screening-trend-grid" hidden>
+              <section class="screening-trend-card" id="qphqTrendCard" hidden>
+                <h3>PHQ-9 progress</h3>
+                <p class="cap">Your previous PHQ-9 scores, shown separately.</p>
+                <div class="box">
+                  <canvas id="qphqHistoryChart" role="img" aria-label="PHQ-9 score history"></canvas>
+                </div>
+              </section>
+
+              <section class="screening-trend-card" id="qgadTrendCard" hidden>
+                <h3>GAD-7 progress</h3>
+                <p class="cap">Your previous GAD-7 scores, shown separately.</p>
+                <div class="box">
+                  <canvas id="qgadHistoryChart" role="img" aria-label="GAD-7 score history"></canvas>
+                </div>
+              </section>
+            </div>
+
+            <p class="cap">
+              PHQ-9 and GAD-7 scores use different scales. Their scores are not added
+              together or treated as one clinical risk score.
+            </p>
+          </section>
+
+        </main>
+
+
     </div>
   </div>
 </div>
@@ -548,7 +1255,7 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
       <button class="btn" id="ago" style="width:100%;justify-content:center">Log in</button>
     </form>
     <p class="cap" style="margin-top:12px"><a href="#" id="afg">Forgot password?</a></p>
-  
+
     <p class="cap">In a crisis, call Tele-MANAS on 14416, or 112 if you are in danger.</p>
   </section></div></div>
 <div class="ov" id="onb" role="dialog" aria-modal="true" aria-labelledby="ot" hidden><div class="dlg">
@@ -582,23 +1289,40 @@ let labels=[];
 let data={mood:[],sleep:[],screen:[],steps:[]};
 let base={mood:0,sleep:0,screen:0,steps:0};
 const W={mood:.4,sleep:.25,steps:.2,screen:.15},on={mood:true,sleep:true,steps:true,screen:true};
-let currentEmail="", userData={checkins:[],entries:[],questionnaires:{},answers:{},consent:{...on},profile:{name:""}};
+let currentEmail="", userData={checkins:[],entries:[],questionnaires:{},screeningHistory:[],answers:{},consent:{...on},profile:{name:""}};
 let selectedMood=3;
-function emptyUserData(){return {checkins:[],entries:[],questionnaires:{},answers:{},consent:{mood:true,sleep:true,steps:true,screen:true},profile:{name:""}};}
+function emptyUserData(){return {checkins:[],entries:[],questionnaires:{},screeningHistory:[],answers:{},consent:{mood:true,sleep:true,steps:true,screen:true},profile:{name:""}};}
 function loadUserData(email){
   currentEmail=email;
   try { const raw=localStorage.getItem("mc_data_"+email); userData=raw?{...emptyUserData(),...JSON.parse(raw)}:emptyUserData(); }
   catch(e){ userData=emptyUserData(); }
   entries=userData.entries;
+  renderEntries();
   qlast=userData.questionnaires||{};
+  if(!Array.isArray(userData.screeningHistory)||userData.screeningHistory.length===0){
+    userData.screeningHistory=[];
+    Object.entries(qlast).forEach(([key,record])=>{
+      if(record&&typeof record.score==="number"){
+        userData.screeningHistory.push({
+          questionnaire:key,
+          score:record.score,
+          max:key==="gad"?21:27,
+          band:record.band||"Completed",
+          date:record.date||new Date().toISOString()
+        });
+      }
+    });
+  }
   if(userData.answers){qa.phq=userData.answers.phq||[];qa.gad=userData.answers.gad||[];}
   Object.keys(on).forEach(k=>on[k]=userData.consent?.[k]!==false);
   name=userData.profile?.name||name;
   syncDataFromRecords();
+  renderQ();
+  if(location.hash==="#screening")renderScreeningHistory();
 }
 function saveUserData(){
   if(!currentEmail)return;
-  userData.entries=entries;userData.questionnaires=qlast;userData.answers={phq:qa.phq,gad:qa.gad};userData.consent={...on};
+  userData.screeningHistory=Array.isArray(userData.screeningHistory)?userData.screeningHistory:[];userData.entries=entries;userData.questionnaires=qlast;userData.answers={phq:qa.phq,gad:qa.gad};userData.consent={...on};
   userData.profile={...(userData.profile||{}),name};
   try{localStorage.setItem("mc_data_"+currentEmail,JSON.stringify(userData));}catch(e){toast("Could not save data in this browser.");}
 }
@@ -962,12 +1686,12 @@ function render0(){
     $("ledger").innerHTML='<p class="cap">No personal data yet.</p>';$("dist").textContent="";$("facts").innerHTML='<li>Your personal patterns will appear here after you add check-ins.</li>';$("note").textContent="No model or risk signal is shown when there is no personal history.";
     const leg={position:"bottom",labels:{boxWidth:12,color:ink}};
     [["cSleep","line"],["cRisk","line"],["cWhy","doughnut"],["cPie","pie"],["cMood","line"],["cScreenStress","line"],["cHab","bar"],["cWk","bar"]].forEach(([id,type])=>mk(id,{type,data:{labels:[],datasets:[]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg}}}));
-    renderEntries();renderLearn();renderCampus();return;
+    renderEntries();renderLearn();return;
   }
   const scores=labels.map((_,i)=>score(i)),last=data.mood.length-1,sc=scores[last],lv=learnDay<14?"Low":level(sc),d=devs(last);
   document.querySelectorAll(".mood").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.v===selectedMood));
   document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.k===habit));
-  renderToday(sc,lv,d);$("bell").dataset.alert=lv==="High"?"1":"";renderGarden(scores,d,lv);renderLearn();renderCampus();lastLv=lv;
+  renderToday(sc,lv,d);$("bell").dataset.alert=lv==="High"?"1":"";renderGarden(scores,d,lv);renderLearn();lastLv=lv;
   const x={grid:{display:false},ticks:{maxTicksLimit:7}},leg={position:"bottom",labels:{boxWidth:12,color:ink}};
   mk("cSleep",{type:"line",data:{labels,datasets:[{label:"Sleep (hrs)",data:data.sleep,borderColor:K.teal,backgroundColor:"rgba(11,181,161,.18)",fill:true,tension:.35,borderWidth:4,pointRadius:4},{label:"Your usual",data:labels.map(()=>base.sleep),borderColor:ink,borderDash:[7,7],pointRadius:0,borderWidth:2}]},options:{maintainAspectRatio:false,scales:{y:{min:4,max:9,grid:{color:gr}},x},plugins:{legend:leg}}});
   mk("cRisk",{type:"line",data:{labels,datasets:[{data:scores,borderColor:K.blue,borderWidth:4,tension:.35,fill:true,backgroundColor:"rgba(122,92,196,.14)",pointRadius:7,pointBorderWidth:2,pointBorderColor:ink,pointBackgroundColor:scores.map(s=>LV[level(s)][1])}]},
@@ -1016,6 +1740,51 @@ function applyLang(){
     if(n.__o===undefined)n.__o=n.nodeValue;const tr=n.__o.trim();
     n.nodeValue=lang==="hi"&&HI[tr]?n.__o.replace(tr,HI[tr]):n.__o;}
 }
+function updateThemeToggle() {
+  const button = $("themeToggle");
+  if (!button) return;
+
+  const isDark =
+    document.documentElement.dataset.theme === "dark" ||
+    (!document.documentElement.dataset.theme &&
+      matchMedia("(prefers-color-scheme: dark)").matches);
+
+  button.innerHTML = isDark
+    ? '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>'
+    : '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 018.5 3.5 8.5 8.5 0 1020.5 15.5z"/></svg>';
+
+  button.setAttribute(
+    "aria-label",
+    isDark ? "Switch to light theme" : "Switch to dark theme"
+  );
+  button.title = isDark ? "Switch to light theme" : "Switch to dark theme";
+}
+
+function applyTheme(mode, rerender = true, persist = true) {
+  const selected = ["auto", "light", "dark"].includes(mode)
+    ? mode
+    : "auto";
+
+  if (selected === "auto") {
+    delete document.documentElement.dataset.theme;
+  } else {
+    document.documentElement.dataset.theme = selected;
+  }
+
+  document.querySelectorAll('#theme input[name="th"]').forEach(radio => {
+    radio.checked = radio.value === selected;
+  });
+
+  if (persist) {
+    try {
+      localStorage.setItem("mc_theme", selected);
+    } catch (e) {}
+  }
+
+  updateThemeToggle();
+
+  if (rerender) render();
+}
 function render(){render0();applyLang();}
 function whyText(lv){
   if(learnDay<14)return"";
@@ -1033,38 +1802,345 @@ function renderLearn(){
   const count=(userData.checkins||[]).length,ready=count>=14;
   $("learn").innerHTML=ready?`<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b>Your personal baseline is available</b><span class="cap">Based on ${count} saved check-ins.</span></div><div class="bar"><div style="width:100%;background:var(--acc)"></div></div>`:`<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap"><b>Building your personal history: ${Math.min(count,14)} of 14 check-ins</b><span class="cap">We need more entries before showing a reliable personal baseline.</span></div><div class="bar"><div style="width:${Math.min(count,14)/14*100}%;background:var(--acc)"></div></div>`;
 }
-const QS={phq:{n:"PHQ-9 · low mood",items:["Little interest or pleasure in doing things","Feeling down, depressed, or hopeless","Trouble falling or staying asleep, or sleeping too much","Feeling tired or having little energy","Poor appetite or overeating","Feeling bad about yourself, or that you are a failure or have let yourself or your family down","Trouble concentrating on things, such as reading or watching television","Moving or speaking so slowly that others could notice, or being so restless that you move around a lot more than usual","Thoughts that you would be better off dead, or of hurting yourself in some way"],bands:[[4,"Minimal"],[9,"Mild"],[14,"Moderate"],[19,"Moderately severe"],[27,"Severe"]]},
- gad:{n:"GAD-7 · anxiety",items:["Feeling nervous, anxious, or on edge","Not being able to stop or control worrying","Worrying too much about different things","Trouble relaxing","Being so restless that it is hard to sit still","Becoming easily annoyed or irritable","Feeling afraid, as if something awful might happen"],bands:[[4,"Minimal"],[9,"Mild"],[14,"Moderate"],[21,"Severe"]]}};
-const OPT=["Not at all","Several days","More than half the days","Nearly every day"],qa={phq:[],gad:[]};let qlast={};
-function renderQ(){
-  $("qtabs").innerHTML=Object.keys(QS).map(k=>`<button class="tab" data-k="${k}" aria-selected="${k===qk}">${QS[k].n}</button>`).join("");
-  $("qlist").innerHTML=QS[qk].items.map((t,i)=>`<div class="q"><div>${i+1}. ${t}</div><div class="opts">${OPT.map((o,v)=>`<label><input type="radio" name="q${i}" value="${v}" ${qa[qk][i]===v?"checked":""}>${o}</label>`).join("")}</div></div>`).join("");
-  $("qres").innerHTML="";applyLang();
-}
-function scoreQ(){
-  const a=qa[qk],Q=QS[qk];if(Q.items.some((_,i)=>a[i]===undefined)){toast("Please answer every question.");return;}
-  const sc=a.reduce((p,q)=>p+q,0),bi=Q.bands.findIndex(b=>sc<=b[0]),band=Q.bands[bi][1];qlast[qk]={score:sc,band,date:new Date().toISOString()};saveUserData();
-  const hi=bi>=2,ai=lastLv!=="Low";
-  const cross=hi&&!ai?"Your answers suggest more strain than your daily signals show. Both matter, so please consider talking to someone.":hi&&ai?"Your answers and your daily signals point the same way. Please consider talking to a counsellor.":!hi&&ai?"Your answers look lighter than your daily signals. It may be worth keeping an eye on things.":"Your answers and your daily signals both look fairly steady.";
-  $("qres").innerHTML=`<h3 style="margin-top:16px">${sc} · ${band}</h3><div class="bar"><div style="width:${sc/(qk==="phq"?27:21)*100}%;background:${bi>=2?K.pink:bi===1?K.yel:K.teal}"></div></div><p>${cross}</p><p class="cap">This is a screening score, not a diagnosis.</p>`+(qk==="phq"&&a[8]>0?`<div class="alert"><b>You don’t have to handle this alone.</b> Call Tele-MANAS on <a href="tel:14416">14416</a> any time. If you’re in immediate danger, call <a href="tel:112">112</a>.</div>`:"");
-}
-const DEPTS=[["Whole campus",240,[150,62,28]],["B.Tech CSE (AIML)",86,[55,22,9]],["BBA",64,[38,18,8]],["Design (small group)",7,[4,2,1]]],OFF=[-6,-4,-5,-2,0,3,2,0];
-function renderCampus(){
-  const[nm,n,c]=DEPTS[+($("dept").value||0)],hide=n<10;$("cohwrap").hidden=hide;
-  $("cstats").innerHTML=hide?`<div class="card"><b>Too few people to show safely.</b><p class="cap">Groups smaller than 10 are hidden so no one can be identified.</p></div>`:[["Students in this group",n,"Simulated for the demo",K.blue],["Checked in this week",Math.round(n*.78),"About 78% of the group",K.teal],["May need support",Math.round((c[1]+c[2])/n*100)+"%","Patchy clouds or stormy",K.pink]].map(x=>`<div class="card stat" style="--c:${x[3]}"><div class="lbl">${x[0]}</div><div class="num">${x[1]}</div><p class="cap">${x[2]}</p></div>`).join("");
-  if(hide)return;const ink=css("--ink"),b=(c[1]+c[2])/n*100;
-  mk("cCoh",{type:"pie",data:{labels:["Clear skies","Patchy clouds","Stormy for now"],datasets:[{data:c,backgroundColor:[K.teal,K.yel,K.pink],borderColor:css("--card"),borderWidth:3}]},options:{maintainAspectRatio:false,plugins:{legend:{position:"bottom",labels:{color:ink}}}}});
-  mk("cTr",{type:"line",data:{labels:["W1","W2","W3","W4","W5","W6","W7","W8"],datasets:[{label:"% needing support",data:OFF.map(o=>Math.max(0,+(b+o).toFixed(1))),borderColor:K.pink,backgroundColor:"rgba(255,92,138,.15)",fill:true,tension:.35,borderWidth:3}]},options:{maintainAspectRatio:false,scales:{y:{min:0,grid:{color:"rgba(120,135,170,.25)"}},x:{grid:{display:false}}},plugins:{legend:{display:false}}}});
-}
-function showModel(){
-  let j;try{j=JSON.parse($("mj").value)}catch(e){toast("That isn’t valid JSON. Check the commas and quotes.");return;}
-  const keys=["accuracy","precision","recall","f1"],ok=Object.entries(j).filter(([k,v])=>v&&typeof v==="object"&&keys.some(x=>typeof v[x]==="number"));
-  if(!ok.length){$("mres").innerHTML='<p class="cap">No numbers found yet. Add your real results first.</p>';return;}
-  const sc=v=>v<=1?v*100:v,cols=[K.blue,K.teal,K.orange];
-  $("mres").innerHTML='<div class="box"><canvas id="cMet" role="img" aria-label="Model metrics"></canvas></div><div id="mtab"></div>';
-  mk("cMet",{type:"bar",data:{labels:["Accuracy","Precision","Recall","F1"],datasets:ok.map(([k,v],i)=>({label:k,data:keys.map(x=>typeof v[x]==="number"?+sc(v[x]).toFixed(1):null),backgroundColor:cols[i%3],borderRadius:4}))},options:{maintainAspectRatio:false,scales:{y:{min:0,max:100,title:{display:true,text:"%"}}},plugins:{legend:{position:"bottom"}}}});
-  $("mtab").innerHTML=ok.map(([k,v])=>`<div class="row"><b>${esc(k)}</b><span>${keys.map(x=>x+": "+(typeof v[x]==="number"?(+sc(v[x]).toFixed(1))+"%":"–")).join(" · ")}</span></div>`).join("");
-}
+const QS = {
+      phq: {
+        n: "PHQ-9 · low mood",
+        items: [
+          "Little interest or pleasure in doing things",
+          "Feeling down, depressed, or hopeless",
+          "Trouble falling or staying asleep, or sleeping too much",
+          "Feeling tired or having little energy",
+          "Poor appetite or overeating",
+          "Feeling bad about yourself, or that you are a failure or have let yourself or your family down",
+          "Trouble concentrating on things, such as reading or watching television",
+          "Moving or speaking so slowly that others could notice, or being so restless that you move around a lot more than usual",
+          "Thoughts that you would be better off dead, or of hurting yourself in some way"
+        ],
+        bands: [[4, "Minimal"], [9, "Mild"], [14, "Moderate"], [19, "Moderately severe"], [27, "Severe"]]
+      },
+      gad: {
+        n: "GAD-7 · anxiety",
+        items: [
+          "Feeling nervous, anxious, or on edge",
+          "Not being able to stop or control worrying",
+          "Worrying too much about different things",
+          "Trouble relaxing",
+          "Being so restless that it is hard to sit still",
+          "Becoming easily annoyed or irritable",
+          "Feeling afraid, as if something awful might happen"
+        ],
+        bands: [[4, "Minimal"], [9, "Mild"], [14, "Moderate"], [21, "Severe"]]
+      }
+    };
+
+    const OPT = [
+      "Not at all",
+      "Several days",
+      "More than half the days",
+      "Nearly every day"
+    ];
+
+    const qa = { phq: [], gad: [] };
+    let qlast = {};
+
+    function updateScreeningProgress() {
+      const total = QS[qk].items.length;
+      const answered = qa[qk].filter(v => v !== undefined).length;
+      const percentage = Math.round(answered / total * 100);
+
+      $("qprogressLabel").textContent = `${QS[qk].n.split(" · ")[0]} completion`;
+      $("qprogressCount").textContent = `${answered} of ${total} answered`;
+      $("qprogressFill").style.width = percentage + "%";
+      $("qprogressBar").setAttribute("aria-valuenow", percentage);
+      $("qgo").disabled = answered !== total;
+
+      document.querySelectorAll("#qtabs .tab").forEach(tab => {
+        const key = tab.dataset.k;
+        const count = qa[key].filter(v => v !== undefined).length;
+        const totalQuestions = QS[key].items.length;
+        const progress = tab.querySelector("[data-progress]");
+        if (progress) {
+          progress.textContent = `${count} of ${totalQuestions} answered`;
+        }
+      });
+
+      $("qanswerHint").textContent = answered === total
+        ? "All questions answered. You can now view your result."
+        : "Answer every question to view your result.";
+    }
+
+    function renderQ() {
+      const descriptions = {
+        phq: "Depression symptom screening",
+        gad: "Anxiety symptom screening"
+      };
+
+      $("qtabs").innerHTML = Object.keys(QS).map(k => `
+        <button class="tab" data-k="${k}" aria-selected="${k === qk}">
+          <span class="screening-tab-title">${QS[k].n}</span>
+          <span class="screening-tab-detail">${descriptions[k]} · ${QS[k].items.length} questions</span>
+          <span class="screening-tab-progress" data-progress></span>
+        </button>
+      `).join("");
+
+      $("qsectionTitle").textContent = qk === "phq"
+        ? "PHQ-9 · Depression screening"
+        : "GAD-7 · Anxiety screening";
+
+      $("qlist").innerHTML = QS[qk].items.map((question, i) => `
+        <article class="q-card">
+          <div class="q-heading">
+            <span class="q-number">${String(i + 1).padStart(2, "0")}</span>
+            <span>${esc(question)}</span>
+          </div>
+
+          <div class="opts" role="radiogroup"
+               aria-label="Responses for question ${i + 1}">
+            ${OPT.map((option, value) => `
+              <label class="screening-option">
+                <input type="radio"
+                       name="q${i}"
+                       value="${value}"
+                       ${qa[qk][i] === value ? "checked" : ""}>
+                <span>${option}</span>
+              </label>
+            `).join("")}
+          </div>
+        </article>
+      `).join("");
+
+      $("qres").innerHTML = "";
+      updateScreeningProgress();
+      applyLang();
+    }
+
+    function renderScreeningHistory() {
+      const records = (userData.screeningHistory || [])
+        .slice()
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      $("qhistoryCount").textContent =
+        `${records.length} completed`;
+
+      if (!records.length) {
+        $("qhistoryList").innerHTML =
+          '<p class="cap">Your completed screening results will appear here.</p>';
+        $("qhistoryTrends").hidden = true;
+      } else {
+        $("qhistoryList").innerHTML = records
+          .slice(-8)
+          .reverse()
+          .map(record => {
+            const instrument = record.questionnaire === "gad"
+              ? "GAD-7"
+              : "PHQ-9";
+            const max = Number(record.max) || (record.questionnaire === "gad" ? 21 : 27);
+            const score = Number(record.score) || 0;
+            const percentage = Math.max(0, Math.min(100, score / max * 100));
+            const parsedDate = new Date(record.date);
+            const dateLabel = Number.isNaN(parsedDate.getTime())
+              ? "Date unavailable"
+              : parsedDate.toLocaleDateString("en-IN", {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+              });
+
+            return `
+              <div class="screening-history-item">
+                <div>
+                  <strong>${instrument} · ${esc(record.band || "Completed")}</strong>
+                  <small>${dateLabel}</small>
+                </div>
+                <div class="screening-history-score">
+                  ${score}<small> / ${max}</small>
+                </div>
+                <div class="screening-history-bar">
+                  <span style="width:${percentage}%"></span>
+                </div>
+              </div>
+            `;
+          }).join("");
+
+        $("qhistoryTrends").hidden = false;
+      }
+
+      const drawTrend = (canvasId, cardId, key, color, maxScore, step) => {
+        const items = records
+          .filter(r => r.questionnaire === key)
+          .slice(-8);
+
+        const card = $(cardId);
+        const canvas = $(canvasId);
+
+        card.hidden = items.length === 0;
+
+        if (!items.length) {
+          if (charts[canvasId]) {
+            charts[canvasId].destroy();
+            delete charts[canvasId];
+          }
+          return;
+        }
+
+        mk(canvasId, {
+          type: "line",
+          data: {
+            labels: items.map(r => {
+              const d = new Date(r.date);
+              return Number.isNaN(d.getTime())
+                ? ""
+                : d.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+            }),
+            datasets: [{
+              label: key === "phq" ? "PHQ-9 score" : "GAD-7 score",
+              data: items.map(r => Number(r.score) || 0),
+              borderColor: color,
+              backgroundColor: color + "22",
+              pointBackgroundColor: color,
+              pointRadius: 4,
+              borderWidth: 3,
+              tension: .3,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                min: 0,
+                max: maxScore,
+                ticks: { stepSize: step },
+                grid: { color: css("--line") }
+              },
+              x: {
+                grid: { display: false },
+                ticks: { maxRotation: 0 }
+              }
+            },
+            plugins: {
+              legend: { display: false }
+            }
+          }
+        });
+      };
+
+      drawTrend("qphqHistoryChart", "qphqTrendCard", "phq", K.blue, 27, 5);
+      drawTrend("qgadHistoryChart", "qgadTrendCard", "gad", K.teal, 21, 3);
+    }
+
+    function scoreQ() {
+      const answers = qa[qk];
+      const questionnaire = QS[qk];
+
+      if (questionnaire.items.some((_, i) => answers[i] === undefined)) {
+        toast("Please answer every question.");
+        return;
+      }
+
+      const score = answers.reduce((total, value) => total + value, 0);
+      const bandIndex = questionnaire.bands.findIndex(
+        band => score <= band[0]
+      );
+
+      const band = questionnaire.bands[bandIndex][1];
+      const maxScore = questionnaire.items.length * 3;
+      const rangeStart = bandIndex === 0
+        ? 0
+        : questionnaire.bands[bandIndex - 1][0] + 1;
+      const rangeEnd = questionnaire.bands[bandIndex][0];
+
+      const date = new Date().toISOString();
+
+      qlast[qk] = { score, band, date };
+
+      if (!Array.isArray(userData.screeningHistory)) {
+        userData.screeningHistory = [];
+      }
+
+      userData.screeningHistory.push({
+        questionnaire: qk,
+        score,
+        max: maxScore,
+        band,
+        date
+      });
+
+      userData.screeningHistory =
+        userData.screeningHistory.slice(-50);
+
+      saveUserData();
+
+      const tone = bandIndex >= 3
+        ? "high"
+        : bandIndex === 2
+          ? "moderate"
+          : "low";
+
+      const separateContext = userData.checkins?.length
+        ? "Your daily check-in patterns are available separately in MindCare. They are not combined with this questionnaire score."
+        : "Daily check-ins can provide additional context over time. They are not combined with this questionnaire score.";
+
+      const crisisNotice = qk === "phq" && answers[8] > 0
+        ? `
+          <div class="alert">
+            <b>You deserve support, and you do not have to handle this alone.</b>
+            <p>
+              Your response makes it important to connect with a trained
+              mental health professional promptly. This questionnaire
+              cannot determine immediate safety by itself.
+            </p>
+            <p>
+              Tele-MANAS: <a href="tel:14416">14416</a>.
+              If you are in immediate danger, call
+              <a href="tel:112">112</a>.
+            </p>
+          </div>
+        `
+        : "";
+
+      $("qres").innerHTML = `
+        <section class="screening-result ${tone}" aria-live="polite">
+          <div class="screening-result-layout">
+            <div class="screening-score-block">
+              <span class="cap">YOUR SCORE</span>
+              <strong>${score}</strong>
+              <small>out of ${maxScore}</small>
+            </div>
+
+            <div>
+              <p class="eyebrow">SCREENING RESULT</p>
+              <h3>${qk === "phq" ? "PHQ-9" : "GAD-7"} · ${esc(band)}</h3>
+              <span class="screening-severity">${esc(band)} symptom range</span>
+              <p class="cap">
+                Score range: ${rangeStart}–${rangeEnd}
+              </p>
+            </div>
+          </div>
+
+          <div class="bar" style="margin-top:18px">
+            <div style="width:${score / maxScore * 100}%;background:var(--acc)"></div>
+          </div>
+
+          <p>${separateContext}</p>
+
+          <p class="cap">
+            This is a screening result based on your responses, not a
+            diagnosis or a prediction of imminent risk. Consider discussing
+            your result with a qualified mental health professional.
+          </p>
+
+          ${crisisNotice}
+        </section>
+      `;
+
+      renderScreeningHistory();
+      updateScreeningProgress();
+      toast("Screening result saved.");
+    }
+
+
 function init2(){
   $("on_ok").onchange=e=>$("on_go").disabled=!e.target.checked;
   $("on_go").onclick=()=>{name=$("on_name").value.trim()||"friend";$("pname").value=name;$("av").textContent=name[0].toUpperCase();
@@ -1073,16 +2149,18 @@ function init2(){
     userData.profile={...(userData.profile||{}),name};saveUserData();try{localStorage.setItem("mc_onb_"+currentEmail,"1")}catch(e){}$("onb").hidden=true;render();toast("Welcome, "+name+".");};
   $("lang").onclick=()=>{lang=lang==="hi"?"en":"hi";document.documentElement.lang=lang;$("lang").textContent=lang==="hi"?"EN":"हिं";render();};
   $("qtabs").onclick=e=>{const b=e.target.closest(".tab");if(b){qk=b.dataset.k;renderQ();}};
-  $("qlist").onchange=e=>{qa[qk][+e.target.name.slice(1)]=+e.target.value;saveUserData();};
+  $("qlist").onchange=e=>{
+    if(!e.target.name||!/^q\d+$/.test(e.target.name))return;
+    qa[qk][Number(e.target.name.slice(1))]=Number(e.target.value);
+    saveUserData();
+    $("qres").innerHTML="";
+    updateScreeningProgress();
+  };
   $("qgo").onclick=scoreQ;renderQ();
-  $("dept").innerHTML=DEPTS.map((d,i)=>`<option value="${i}">${d[0]} (${d[1]} students)</option>`).join("");$("dept").onchange=render;
-  $("mgo").onclick=showModel;$("mfmt").onclick=()=>{$("mj").value='{\n  "mentalbert": {"accuracy": null, "precision": null, "recall": null, "f1": null},\n  "bilstm": {"accuracy": null, "precision": null, "recall": null, "f1": null}\n}';};
-  const sf=()=>{$("sst").textContent=SAFETY.status;$("sph").innerHTML=SAFETY.phrases.map(p=>`<span style="border:1px solid var(--line);border-radius:99px;padding:2px 10px">${esc(p)}</span>`).join("");};sf();
-  $("srb").onclick=()=>{const r=$("srv").value.trim();if(!r){toast("Add the reviewer’s name first.");return;}SAFETY.status="Reviewed by "+r+" on "+new Date().toLocaleDateString("en-IN");sf();};
   $("bgo").onclick=()=>{const txt=`Hello, I would like to book a ${$("bsv").value.toLowerCase()} appointment. Preferred time: ${$("bwh").value.trim()||"flexible"}.${$("bnote").value.trim()?" Note: "+$("bnote").value.trim():""} (Sent via MindCare)`;
     if(CENTRE.email){location.href="mailto:"+CENTRE.email+"?subject="+encodeURIComponent("Appointment request")+"&body="+encodeURIComponent(txt);}
     else $("bres").innerHTML=`<p class="cap" style="margin-top:12px">Your centre’s email isn’t set up yet. Copy this message and send it to them:</p><textarea rows="3" readonly aria-label="Appointment request">${esc(txt)}</textarea>`;};
-  $("show").onclick=()=>{$("dump").value=JSON.stringify({name,consent:on,checkins:userData.checkins,entries,questionnaires:qlast,daily:data,baseline:base},null,2);$("dump").hidden=false;$("cp").hidden=false;};
+  $("show").onclick=()=>{$("dump").value=JSON.stringify({name,consent:on,checkins:userData.checkins,entries,questionnaires:qlast,screeningHistory:userData.screeningHistory,daily:data,baseline:base},null,2);$("dump").hidden=false;$("cp").hidden=false;};
   $("cp").onclick=()=>{navigator.clipboard.writeText($("dump").value).then(()=>toast("Copied."),()=>toast("Select the text and copy it."));};
   let arm=false;$("del").onclick=()=>{if(!arm){arm=true;$("del").textContent="Click again to confirm";setTimeout(()=>{arm=false;$("del").textContent="Delete everything";},4000);return;}
     arm=false;entries.length=0;qlast={};qa.phq=[];qa.gad=[];alerts=0;$("dump").value="";$("dump").hidden=true;$("cp").hidden=true;
@@ -1124,83 +2202,271 @@ function renderStats(){
 }
 function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),2600);}
 function renderEntries(){$("entries").innerHTML=entries.length?entries.map(e=>`<div class="entry" style="--c:${e.c}"><b>${e.lv}</b><br>${esc(e.text)}</div>`).join(""):'<p class="cap">Nothing here yet.</p>';}
-async function analyse(){
-  const raw=$("jt").value.trim();
-  if(!raw)return toast("Please write a few lines first.");
+async function analyse() {
+      const raw = $("jt").value.trim();
 
-  const button=$("go");
-  button.disabled=true;
-  button.textContent="Checking…";
-  $("res").innerHTML='<p class="cap" role="status">Checking your text signal…</p>';
+      if (!raw) return toast("Please write a few lines first.");
 
-  try{
-    // Flask API contract:
-    // POST /api/analyze-text
-    // Request:  {"text": "..."}
-    // Response: {"label": 0|1, "probability": 0.0-1.0}
-    // Optional: {"stress_probability": 0.0-1.0, "threshold": 0.60, "message": "..."}
-    const response=await fetch("/api/analyze-text",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({text:raw})
-    });
+      const button = $("go");
+      button.disabled = true;
+      button.textContent = "Analysing...";
 
-    if(!response.ok){
-      let detail="";
-      try{const e=await response.json();detail=e.error||e.message||"";}catch(_){}
-      throw new Error(detail||`The server returned HTTP ${response.status}.`);
+      try {
+        // 1. Call the local seven-class MentalBERT API
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ text: raw })
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(
+            errorData.detail || `API request failed: ${response.status}`
+          );
+        }
+
+        const result = await response.json();
+
+        // 2. Validate the API response
+        if (
+          !result.predicted_class ||
+          typeof result.confidence !== "number" ||
+          !result.class_probabilities
+        ) {
+          throw new Error("Invalid MentalBERT response.");
+        }
+
+        const highestPrediction = Object.entries(result.class_probabilities)
+          .sort((a, b) => b[1] - a[1])[0];
+
+        const [predictedClass, predictedProbability] = highestPrediction;
+
+        // 3. Save the journal entry with its predicted category
+        entries.unshift({
+          text: raw,
+          lv: "Text analysis: " + result.predicted_class,
+          c: K.blue,
+          date: new Date().toISOString()
+        });
+
+        saveUserData();
+        renderEntries();
+
+        // 4. Prepare the seven-class probability breakdown
+        const probabilityHTML = `
+  <div style="margin: 14px 0;">
+    <div style="
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:8px;
+    ">
+      <b>${esc(predictedClass)}</b>
+      <span>${(predictedProbability * 100).toFixed(2)}%</span>
+    </div>
+
+    <div style="
+      height:10px;
+      background:var(--line);
+      border-radius:10px;
+      overflow:hidden;
+    ">
+      <div style="
+        height:100%;
+        width:${predictedProbability * 100}%;
+        background:var(--blue);
+        border-radius:10px;
+      "></div>
+    </div>
+  </div>
+`;
+
+        // 5. Display MentalBERT results
+        $("res").innerHTML = `
+      <section class="card" aria-live="polite">
+
+        <h3>MentalBERT Text Analysis</h3>
+
+        <p>Your predicted category:</p>
+
+        <h2>${esc(result.predicted_class)}</h2>
+
+        <p>
+          <b>Model confidence:</b>
+          ${(result.confidence * 100).toFixed(2)}%
+        </p>
+
+        <hr>
+
+        <h3>Class Probability Distribution</h3>
+
+        ${probabilityHTML}
+
+        <hr>
+
+        <p class="cap">
+          ${esc(result.disclaimer)}
+        </p>
+
+        <p>
+          These results are experimental text-classification estimates,
+          not a diagnosis or a substitute for professional assessment.
+        </p>
+
+        <p>
+          <a href="#support">Explore support resources</a>
+        </p>
+
+      </section>
+    `;
+
+        toast("Journal entry analysed and saved.");
+
+      } catch (error) {
+
+        console.error("MentalBERT analysis error:", error);
+
+        $("res").innerHTML = `
+      <div class="alert" role="alert">
+        <b>Unable to analyse your entry.</b>
+        <p>${esc(error.message || "Please check your backend connection.")}</p>
+        <p class="cap">
+          Your entry has not been saved. Please try again.
+        </p>
+        <p><a href="#support">Explore support resources</a></p>
+      </div>
+    `;
+
+      } finally {
+        button.disabled = false;
+        button.textContent = "Read my entry";
+      }
     }
 
-    const result=await response.json();
-    let probability=typeof result.stress_probability==="number"
-      ? result.stress_probability : result.probability;
+function initSupportPage(){
+  document.querySelectorAll("#p-support .support-tile").forEach(tile=>{
+    const go=()=>{
+      const target=$(tile.dataset.go);
+      if(target)target.scrollIntoView({behavior:"smooth",block:"start"});
+    };
+    tile.onclick=go;
+    tile.onkeydown=e=>{
+      if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}
+    };
+  });
 
-    if(typeof probability!=="number"||!Number.isFinite(probability))
-      throw new Error("The API response is missing a numeric probability.");
-    if(probability>1&&probability<=100) probability=probability/100;
-    if(probability<0||probability>1)
-      throw new Error("The returned probability must be between 0 and 1.");
+  // Meditation timer
+  const duration=$("med_dur"),timerText=$("med_t"),timerBar=$("med_bar"),timerButton=$("med_go");
+  if(duration&&timerText&&timerBar&&timerButton){
+    let minutes=1,remaining=60,timer=null;
+    const format=t=>String(Math.floor(t/60)).padStart(2,"0")+":"+String(t%60).padStart(2,"0");
+    const show=()=>{
+      timerText.textContent=format(remaining);
+      timerBar.style.width=(timer?(1-remaining/(minutes*60))*100:0)+"%";
+    };
+    const reset=()=>{
+      clearInterval(timer);timer=null;remaining=minutes*60;
+      timerButton.textContent="Start";show();
+    };
+    duration.onclick=e=>{
+      const b=e.target.closest("button[data-m]");
+      if(!b)return;
+      minutes=Number(b.dataset.m);
+      duration.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===b?"true":"false"));
+      reset();
+    };
+    timerButton.onclick=()=>{
+      if(timer){reset();return;}
+      remaining=minutes*60;timerButton.textContent="Stop";show();
+      timer=setInterval(()=>{
+        remaining--;
+        if(remaining<=0){reset();toast("Session complete. Well done.");return;}
+        show();
+      },1000);
+    };
+    show();
+  }
 
-    const threshold=typeof result.threshold==="number"?result.threshold:0.60;
-    const stressSignal=typeof result.label==="number"
-      ? result.label===1
-      : (typeof result.label==="string"
-          ? /stress|positive|strain/i.test(result.label)
-          : probability>=threshold);
+  // Grounding checklist
+  const grounding=$("gr_list"),groundingCount=$("gr_n"),groundingReset=$("gr_reset");
+  if(grounding&&groundingCount){
+    const boxes=()=>[...grounding.querySelectorAll("input[type=checkbox]")];
+    grounding.onchange=()=>{
+      const n=boxes().filter(x=>x.checked).length;
+      groundingCount.textContent=n+" of 5";
+      if(n===5)toast("Well done. Take one slow breath.");
+    };
+    if(groundingReset)groundingReset.onclick=()=>{
+      boxes().forEach(x=>x.checked=false);
+      groundingCount.textContent="0 of 5";
+    };
+  }
 
-    const pct=Math.round(probability*100);
-    const col=stressSignal?K.yel:K.teal;
-    const heading=stressSignal
-      ? "Stress-related signal detected"
-      : "No strong stress-related signal detected";
-    const msg=result.message||(
-      stressSignal
-        ? "Your text contains patterns the stress model has learned to associate with stress. This is not a diagnosis; consider taking a break or talking with someone you trust if you feel overwhelmed."
-        : "The model did not detect a strong stress-related signal in this text. This does not mean that everything is fine or that support is unnecessary."
-    );
+  // Gratitude notes are stored in this user's journal, without model analysis.
+  const prompts=[
+    "One good thing from today, however small.",
+    "Who helped you recently, even in a tiny way?",
+    "What is one thing your body did well today?",
+    "Name a place or moment that made you feel calm.",
+    "What is something you're looking forward to?"
+  ];
+  let promptIndex=0;
+  const prompt=$("gt_p"),note=$("gt"),saveNote=$("gt_save"),newPrompt=$("gt_new");
+  if(newPrompt&&prompt)newPrompt.onclick=()=>{
+    promptIndex=(promptIndex+1)%prompts.length;
+    prompt.textContent=prompts[promptIndex];
+  };
+  if(saveNote&&note)saveNote.onclick=()=>{
+    const value=note.value.trim();
+    if(!value)return toast("Write a line first.");
+    if(!currentEmail||!$("auth").hidden)return toast("Please log in first.");
+    entries.unshift({
+      text:value,
+      lv:"Gratitude note",
+      c:K.teal,
+      date:new Date().toISOString()
+    });
+    saveUserData();
+    renderEntries();
+    note.value="";
+    toast("Saved to My journal.");
+  };
 
-    $("res").innerHTML=
-      `<h2>${esc(heading)}</h2>
-       <p class="cap">Model stress probability: ${pct}%</p>
-       <div class="bar" role="img" aria-label="Model stress probability ${pct} percent">
-         <div style="width:${pct}%;background:${col}"></div>
-       </div>
-       <p>${esc(msg)}</p>
-       <p class="cap">This experimental model was trained on Dreaddit stress-text data. It is not a medical assessment or a diagnosis.</p>
-       <p><a href="#support">Explore support resources</a></p>`;
-
-    // Journal entries remain local in this prototype; connect database storage separately.
-    entries.unshift({text:raw,lv:stressSignal?"Stress-related signal":"No strong stress signal",c:col,date:new Date().toISOString()});
-    saveUserData();renderEntries();
-    $("jt").value="";
-  }catch(error){
-    $("res").innerHTML=
-      `<div class="alert"><b>Could not analyse your entry.</b>
-       <p>${esc(error.message||"Please check that the Flask backend is running.")}</p>
-       <p class="cap">Expected API: POST /api/analyze-text with JSON {"text":"your text"}.</p></div>`;
-  }finally{
-    button.disabled=false;
-    button.textContent="Read my entry";
+  // Google Maps professional search
+  const form=$("psychSearchForm"),locationInput=$("psychLocation");
+  const mapsLink=$("mapsSearchLink"),message=$("psychMessage");
+  const showMaps=query=>{
+    const q=(query||"").trim();
+    const term=q?"psychiatrists near "+q:"psychiatrists near me";
+    mapsLink.href="https://www.google.com/maps/search/"+encodeURIComponent(term);
+    mapsLink.hidden=false;
+    message.textContent="Your Google Maps search is ready. Open the link below to view nearby listings.";
+  };
+  if(form&&mapsLink&&message){
+    form.onsubmit=e=>{
+      e.preventDefault();
+      const q=locationInput.value.trim();
+      if(!q){message.textContent="Please enter a city or PIN code, or use your location.";mapsLink.hidden=true;return;}
+      showMaps(q);
+    };
+    const locationButton=$("useMyLocation");
+    if(locationButton)locationButton.onclick=()=>{
+      if(!navigator.geolocation){
+        message.textContent="Location is not supported by this browser. Please enter your city or PIN code.";
+        return;
+      }
+      message.textContent="Requesting your location permissionâ€¦";
+      navigator.geolocation.getCurrentPosition(pos=>{
+        const coords=pos.coords.latitude+","+pos.coords.longitude;
+        mapsLink.href="https://www.google.com/maps/search/psychiatrists/@"+coords+",14z";
+        mapsLink.hidden=false;
+        message.textContent="Location found. Open the Google Maps link below to see nearby listings.";
+      },()=>{
+        message.textContent="Location access was not granted. Please enter your city or PIN code instead.";
+      },{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
+    };
   }
 }
 function build(){
@@ -1217,23 +2483,37 @@ function build(){
   const S=[["mood","Mood and what I write","Read by the text model"],["sleep","Sleep","Hours slept"],["steps","Activity","Daily steps"],["screen","Screen time","Hours on screen"]];
   $("consent").innerHTML=S.map(s=>`<label class="row2"><span><b>${s[1]}</b><br><small>${s[2]}</small></span><input type="checkbox" data-k="${s[0]}" checked></label>`).join("");
   $("consent").onchange=e=>{on[e.target.dataset.k]=e.target.checked;saveUserData();render();};
-  $("theme").onchange=e=>{if(e.target.value==="auto")delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme=e.target.value;render();};
-  $("basetbl").innerHTML=[["Mood",base.mood+" of 5"],["Sleep",base.sleep+" hrs"],["Steps",base.steps>0?base.steps.toLocaleString("en-IN"):"Not collected"],["Screen time",base.screen+" hrs"]].map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
+  $("theme").onchange=e=>applyTheme(e.target.value);
+
+  let savedTheme = "auto";
+  try {
+    savedTheme = localStorage.getItem("mc_theme") || "auto";
+  } catch (e) {}
+
+  applyTheme(savedTheme, false, false);
+
+  $("themeToggle").onclick = () => {
+    const isDark =
+      document.documentElement.dataset.theme === "dark" ||
+      (!document.documentElement.dataset.theme &&
+        matchMedia("(prefers-color-scheme: dark)").matches);
+
+    applyTheme(isDark ? "light" : "dark");
+  };  $("basetbl").innerHTML=[["Mood",base.mood+" of 5"],["Sleep",base.sleep+" hrs"],["Steps",base.steps>0?base.steps.toLocaleString("en-IN"):"Not collected"],["Screen time",base.screen+" hrs"]].map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
   $("del").onclick=()=>{entries.length=0;renderEntries();$("delmsg").textContent="Your entries have been deleted.";};
-  $("bb").onclick=breathe;$("refresh").onclick=()=>{render();toast("Refreshed from your latest check-ins.");};
+  $("bb").onclick=breathe;initSupportPage();$("go").onclick=analyse;$("refresh").onclick=()=>{render();toast("Refreshed from your latest check-ins.");};
   $("pname").onchange=e=>{name=e.target.value.trim()||"friend";$("av").textContent=name[0].toUpperCase();saveUserData();render();};
   $("bell").onclick=()=>{if($("bell").dataset.alert)location.hash="support";else toast("No new alerts. You’re all caught up.");};
-  $("out").onclick=signOut;
-  $("search").onkeydown=e=>{if(e.key!=="Enter")return;const q=e.target.value.trim().toLowerCase(),r=ROUTES.find(x=>q&&x[3].includes(q));if(r){location.hash=r[0];e.target.value="";}else toast("No page matches that. Try “sleep” or “help”.");};
+  $("av").onclick=()=>{location.hash="profile";};
 }
 function route(){
   const r=location.hash.slice(1),R=ROUTES.find(x=>x[0]===r)||ROUTES[0];
   document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.id==="p-"+R[0]));
   document.querySelectorAll("#nav a").forEach(a=>a.setAttribute("aria-current",a.dataset.r===R[0]?"page":"false"));
-  $("ptitle").textContent=R[1];$("psub").textContent=R[2];scrollTo(0,0);render();
+  $("ptitle").textContent=R[1];$("psub").textContent=R[2];scrollTo(0,0);render();if(R[0]==="screening")renderScreeningHistory();
 }
 build();addEventListener("hashchange",route);
-matchMedia("(prefers-color-scheme: dark)").addEventListener("change",render);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{updateThemeToggle();render();});
 route();init2();
 // ---------- Login and sign up (demo: accounts live in this browser only) ----------
 let mode="login",memAcc={};
