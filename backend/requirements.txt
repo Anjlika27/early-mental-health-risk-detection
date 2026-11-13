@@ -1,0 +1,7 @@
+﻿fastapi
+uvicorn[standard]
+torch
+transformers
+python-dotenv
+numpy
+xgboost==3.4.1
