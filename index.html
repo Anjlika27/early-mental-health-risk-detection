@@ -708,6 +708,369 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
       }
     }
 
+
+/* Results & Insights visual longitudinal dashboard */
+#p-results .ri-hero{background:var(--hero);overflow:hidden}
+#p-results .ri-hero-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+#p-results .ri-hero-heading .lead{margin-bottom:8px}
+#p-results .ri-hero-icon{
+  flex:none;width:76px;height:76px;border-radius:50%;
+  display:grid;place-items:center;background:var(--accsoft);
+  color:var(--acc);font-size:34px
+}
+#p-results .ri-period{font-size:12px;color:var(--soft);margin-top:8px}
+#p-results .ri-kpi-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px
+}
+#p-results .ri-kpi{
+  min-width:0;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:17px;display:flex;flex-direction:column;gap:5px
+}
+#p-results .ri-kpi-icon{
+  width:34px;height:34px;border-radius:10px;background:var(--accsoft);
+  color:var(--acc);display:grid;place-items:center;font-size:20px;margin-bottom:6px
+}
+#p-results .ri-kpi-label{font-size:12px;color:var(--soft)}
+#p-results .ri-kpi strong{
+  font-size:clamp(24px,3vw,31px);line-height:1.15;letter-spacing:-.03em
+}
+#p-results .ri-kpi-foot{font-size:11px;color:var(--soft)}
+#p-results .ri-section{margin-top:16px}
+#p-results .ri-section-heading{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:14px
+}
+#p-results .ri-chart-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+}
+#p-results .ri-chart-card,
+#p-results .ri-model-card{
+  min-width:0;padding:16px;border:1px solid var(--line);
+  border-radius:13px;background:var(--paper)
+}
+#p-results .ri-chart-card h3{font-size:14px}
+#p-results .ri-chart-card .cap{margin-top:3px}
+#p-results .ri-chart{
+  position:relative;height:225px;margin-top:12px;min-width:0
+}
+#p-results .ri-model-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+}
+#p-results .ri-model-heading{
+  display:flex;justify-content:space-between;align-items:center;gap:10px
+}
+#p-results .ri-model-heading h3{font-size:16px}
+#p-results .ri-model-value{
+  display:block;font-size:clamp(25px,3vw,31px);line-height:1.2;
+  margin-top:16px;overflow-wrap:anywhere
+}
+#p-results .ri-model-card>.cap{margin-top:5px}
+#p-results .ri-symbol{
+  min-width:42px;height:38px;border-radius:10px;background:var(--accsoft);
+  color:var(--acc);display:grid;place-items:center;font-size:12px;font-weight:800
+}
+#p-results .ri-band{
+  color:var(--soft);font-size:13px;margin:7px 0 0
+}
+#p-results .ri-disclaimer{
+  margin-top:12px;padding:11px 12px;border-radius:10px;
+  background:var(--hero);color:var(--soft);font-size:11.5px;line-height:1.55
+}
+#p-results .ri-history{margin-top:12px}
+#p-results .ri-history-row{
+  display:flex;justify-content:space-between;gap:10px;
+  padding:7px 0;border-bottom:1px solid var(--line);font-size:12px
+}
+#p-results .ri-insight-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px
+}
+#p-results .ri-insight{
+  padding:13px;border:1px solid var(--line);background:var(--paper);border-radius:11px
+}
+#p-results .ri-insight strong{display:block;font-size:13px;margin-bottom:4px}
+#p-results .ri-insight p{font-size:12px;color:var(--soft);margin:0;line-height:1.55}
+#p-results .ri-timeline{display:grid;gap:9px;margin-top:12px}
+#p-results .ri-event{
+  display:grid;grid-template-columns:12px minmax(0,1fr) auto;
+  align-items:start;gap:10px;padding:11px 12px;background:var(--paper);
+  border:1px solid var(--line);border-radius:10px
+}
+#p-results .ri-event-dot{
+  width:9px;height:9px;border-radius:50%;background:var(--acc);margin-top:5px
+}
+#p-results .ri-event strong{font-size:12.5px}
+#p-results .ri-event p{font-size:11.5px;color:var(--soft);margin:2px 0 0}
+#p-results .ri-event time{font-size:10.5px;color:var(--soft);text-align:right}
+#p-results .ri-safety-note{
+  padding:11px;border:1px solid var(--pink);border-radius:10px;
+  background:color-mix(in srgb,var(--pink) 9%,transparent);
+  margin-top:12px;font-size:12px;line-height:1.55
+}
+#p-results .ri-safety-note a{color:var(--bad);font-weight:700}
+#p-results .ri-final-note{line-height:1.65}
+#p-results .ri-final-note p{margin:8px 0}
+#p-results .ri-final-note a{color:var(--acc);font-weight:600}
+#p-results .ri-chart[hidden]{display:none!important}
+@media(max-width:900px){
+  #p-results .ri-kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  #p-results .ri-chart-grid,
+  #p-results .ri-model-grid,
+  #p-results .ri-insight-grid{grid-template-columns:1fr}
+  #p-results .ri-hero-icon{width:54px;height:54px;font-size:25px}
+  #p-results .ri-chart{height:205px}
+  #p-results .ri-event{grid-template-columns:10px minmax(0,1fr)}
+  #p-results .ri-event time{grid-column:2;text-align:left}
+}/* Integrated wellbeing snapshot */
+#p-results .ri-overall-section{border-color:var(--line)}
+#p-results .ri-overall-status{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:7px 12px;border-radius:99px;background:var(--accsoft);
+  color:var(--acc);font-size:11.5px;font-weight:700;white-space:normal
+}
+#p-results .ri-overall-main{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr);
+  gap:14px;padding:18px;border:1px solid var(--line);
+  border-radius:13px;background:var(--hero)
+}
+#p-results .ri-overall-main h3{font-size:19px;line-height:1.3;margin:0 0 7px}
+#p-results .ri-overall-copy{margin:0;color:var(--soft);font-size:13px;line-height:1.6}
+#p-results .ri-overall-lead{
+  padding:14px;border:1px solid var(--line);border-radius:11px;background:var(--card)
+}
+#p-results .ri-overall-lead-label{display:block;color:var(--soft);font-size:11px;margin-bottom:5px}
+#p-results .ri-overall-lead strong{display:block;font-size:16px;line-height:1.35}
+#p-results .ri-overall-lead p{margin:6px 0 0;color:var(--soft);font-size:12px;line-height:1.5}
+#p-results .ri-overall-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;margin-top:12px
+}
+#p-results .ri-overall-item{
+  min-width:0;padding:13px;border:1px solid var(--line);
+  border-radius:11px;background:var(--paper)
+}
+#p-results .ri-overall-item strong{display:block;font-size:12.5px;margin-bottom:5px}
+#p-results .ri-overall-item p{margin:0;color:var(--soft);font-size:11.5px;line-height:1.55}
+@media(max-width:700px){
+  #p-results .ri-overall-main{grid-template-columns:1fr}
+  #p-results .ri-overall-grid{grid-template-columns:1fr}
+  #p-results .ri-overall-status{max-width:100%}
+}
+/* Compact Personal Observations dashboard */
+
+#p-results .ri-compact {
+  padding: 16px;
+}
+
+#p-results .ri-compact-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+#p-results .ri-compact-head .eyebrow {
+  margin-bottom: 4px;
+}
+
+#p-results .ri-compact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 12px;
+}
+
+#p-results .ri-summary-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px;
+  border-radius: 13px;
+  border: 1px solid var(--line);
+  background: var(--hero);
+  min-width: 0;
+}
+
+#p-results .ri-summary-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: var(--acc);
+  background: var(--accsoft);
+}
+
+#p-results .ri-summary-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+#p-results .ri-summary-copy {
+  min-width: 0;
+}
+
+#p-results .ri-summary-copy .eyebrow {
+  margin-bottom: 5px;
+}
+
+#p-results .ri-summary-copy h3 {
+  font-size: 17px;
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+
+#p-results .ri-summary-copy .ri-overall-copy {
+  margin: 0;
+  color: var(--soft);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+#p-results .ri-primary-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--paper);
+  min-width: 0;
+}
+
+#p-results .ri-primary-card .eyebrow {
+  margin-bottom: 6px;
+}
+
+#p-results .ri-primary-card strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+#p-results .ri-primary-card p:last-child {
+  margin: 6px 0 0;
+  color: var(--soft);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+#p-results .ri-support-row {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  gap: 10px;
+  padding: 11px 13px;
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--card);
+}
+
+#p-results .ri-support-row strong {
+  font-size: 11.5px;
+}
+
+#p-results .ri-support-row p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+#p-results .ri-coverage-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 10px;
+}
+
+#p-results .ri-coverage-row span {
+  color: var(--soft);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+#p-results .ri-coverage-row p {
+  margin: 2px 0 0;
+  color: var(--soft);
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+#p-results .ri-compact-note {
+  flex: 1 1 350px;
+  max-width: 600px;
+}
+
+@media(max-width:700px) {
+  #p-results .ri-compact-head {
+    flex-direction: column;
+  }
+
+  #p-results .ri-compact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #p-results .ri-support-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  #p-results .ri-coverage-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+/* My Profile: current check-in history */
+
+#p-profile .profile-data-grid {
+  align-items: stretch;
+}
+
+#p-profile .profile-privacy-note {
+  margin-top: 14px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  line-height: 1.55;
+}
+
+#p-profile #consent,
+#p-profile #basetbl {
+  margin-top: 8px;
+}
+
+#p-profile .profile-average-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+#p-profile .profile-average-row:last-child {
+  border-bottom: 0;
+}
+
+#p-profile .profile-average-row span {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+#p-profile .profile-average-row strong {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (max-width: 820px) {
+  #p-profile .profile-data-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 <body>
@@ -1115,13 +1478,34 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
 
       <main class="page" id="p-profile">
         <section class="card"><h3>About you</h3><label for="pname" class="cap">What should we call you?</label><input class="field" id="pname" value="" maxlength="30" style="max-width:320px"></section>
-        <section class="two">
-          <div class="card"><h3>What I’m happy to share</h3><p class="cap">Switch something off and it drops out of your score.</p><div id="consent"></div></div>
-          <div class="card"><h3>Your normal</h3><p class="cap">Learned from your recent days.</p><div id="basetbl"></div></div>
-        </section>
+        <section class="two profile-data-grid">
+  <div class="card">
+    <h3>Personal score preferences</h3>
+    <p class="cap">
+      Turn off a measure to exclude it from your personal on-device
+      wellbeing score. This does not delete saved records.
+    </p>
+    <div id="consent"></div>
+    <p class="cap profile-privacy-note">
+      Journal text is sent to the local MentalBERT API when you choose
+      to analyze an entry. Daily lifestyle fields are sent to the local
+      XGBoost API when an estimate is requested. These are separate
+      from your on-device score preferences.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Your check-in averages</h3>
+    <p class="cap" id="profileAverageMeta">
+      Averages across all saved check-ins. Missing values are excluded
+      from the average for that measure.
+    </p>
+    <div id="basetbl"></div>
+  </div>
+</section>
         <section class="two">
           <div class="card"><h3>Look and feel</h3><div class="seg" id="theme" style="margin-top:10px"><label><input type="radio" name="th" value="auto" checked> Match my device</label><label><input type="radio" name="th" value="light"> Light</label><label><input type="radio" name="th" value="dark"> Dark</label></div></div>
-          <div class="card"><h3>Privacy</h3><p class="cap" style="margin-bottom:10px">In this demo everything stays in your browser. In the real app your data should be encrypted when sent and when stored, and only you can see it. MindCare is not a diagnosis tool.</p>
+          <div class="card"><h3>Privacy</h3><p class="cap" style="margin-bottom:10px">Your account and saved records are stored in this browser. When you request a model result, journal text or lifestyle fields are sent to the local API at 127.0.0.1:8000 on this computer. MindCare is not a diagnosis tool.</p>
             <button class="btn ghost" id="show">Show my data</button> <button class="btn" id="del">Delete everything</button><p class="cap" id="delmsg"></p>
             <textarea id="dump" rows="8" hidden aria-label="Your data"></textarea><p><button class="btn ghost" id="cp" hidden>Copy</button></p></div>
           <div class="card"><h3>Gentle reminders</h3><p class="cap">A nudge to check in. It only works while this page is open, and a missed day never resets your streak.</p>
@@ -1225,6 +1609,272 @@ textarea,.field{width:100%;font:inherit;color:var(--ink);background:var(--paper)
           </section>
 
         </main>
+<main class="page" id="p-results">
+
+  <section class="card ri-hero">
+    <p class="eyebrow">YOUR WELLBEING JOURNEY</p>
+    <div class="ri-hero-heading">
+      <div>
+        <h2 class="big">Your progress over time</h2>
+        <p class="lead">
+          A visual summary of your saved check-ins, journal analyses
+          and screening assessments, beginning with your first record.
+        </p>
+      </div>
+      <div class="ri-hero-icon" aria-hidden="true">&#10022;</div>
+    </div>
+    <div class="ri-period" id="riPeriod">
+      Your saved history will appear here.
+    </div>
+  </section>
+
+  <section class="ri-kpi-grid" aria-label="Your wellbeing statistics">
+    <article class="ri-kpi">
+      <span class="ri-kpi-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></span>
+      <span class="ri-kpi-label">Days tracked</span>
+      <strong id="riTracked">0</strong>
+      <span class="ri-kpi-foot">Days with saved check-ins</span>
+    </article>
+
+    <article class="ri-kpi">
+      <span class="ri-kpi-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4.2 0 7-2.9 7-6.8 0-2.6-1.6-4.5-3.8-6.7-.2 2.1-1.2 3.3-2.4 4.2C12.8 8.4 11 5.3 8.8 3 9 7.3 5 10 5 15.2 5 19.1 7.8 22 12 22Z"/><path d="M9 18c0-1.5 1-2.5 2.5-3.5"/></svg></span>
+      <span class="ri-kpi-label">Current streak</span>
+      <strong id="riStreak">0</strong>
+      <span class="ri-kpi-foot">Consecutive check-in days</span>
+    </article>
+
+    <article class="ri-kpi">
+      <span class="ri-kpi-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span>
+      <span class="ri-kpi-label">Average mood</span>
+      <strong id="riMoodAverage"> - </strong>
+      <span class="ri-kpi-foot">Across saved check-ins  |  out of 5</span>
+    </article>
+
+    <article class="ri-kpi">
+      <span class="ri-kpi-icon"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg></span>
+      <span class="ri-kpi-label">Average sleep</span>
+      <strong id="riSleepAverage"> - </strong>
+      <span class="ri-kpi-foot">Hours per night</span>
+    </article>
+  </section>
+
+<section class="card ri-section ri-overall-section ri-compact" aria-live="polite">
+
+  <div class="ri-compact-head">
+    <div>
+      <p class="eyebrow">PERSONAL OBSERVATIONS</p>
+      <h2>Your wellbeing snapshot</h2>
+      <p class="cap">A visual summary of your saved history.</p>
+    </div>
+    <span class="ri-overall-status" id="riOverallStatus">Building your history</span>
+  </div>
+
+  <div class="ri-compact-grid">
+
+    <div class="ri-summary-main">
+      <span class="ri-summary-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12h4l3-8 4 16 3-8h4"/>
+        </svg>
+      </span>
+
+      <div class="ri-summary-copy">
+        <p class="eyebrow">OVERALL WELLBEING PATTERN</p>
+        <h3 id="riOverallTitle">Your screening history is still building</h3>
+        <p id="riOverallText" class="ri-overall-copy">
+          Complete a questionnaire or daily check-in to start building your history.
+        </p>
+      </div>
+    </div>
+
+    <div class="ri-primary-card">
+      <p class="eyebrow">MOST RELEVANT SCREENING EVIDENCE</p>
+      <strong id="riPrimaryAssessment">Not available yet</strong>
+      <p id="riPrimaryReason">
+        PHQ-9 and GAD-7 will be considered independently when available.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="ri-support-row">
+    <strong>Supporting daily patterns</strong>
+    <p id="riSupportingPattern">
+      Mood, sleep and journal trends will add context as records accumulate.
+    </p>
+  </div>
+
+  <div class="ri-coverage-row">
+    <div>
+      <span>HISTORY INCLUDED</span>
+      <p id="riCoverage">No saved history yet.</p>
+    </div>
+
+    <p class="ri-compact-note">
+      PHQ-9 and GAD-7 use separate screening scales. MentalBERT is experimental.
+      XGBoost is excluded from this interpretation because it was trained on synthetic data.
+    </p>
+  </div>
+
+</section>
+<section class="card ri-section">
+    <div class="ri-section-heading">
+      <div>
+        <p class="eyebrow">DAILY CHECK-IN HISTORY</p>
+        <h2>Your daily patterns</h2>
+        <p class="cap">All available saved check-ins, from earliest to latest.</p>
+      </div>
+    </div>
+
+    <div class="ri-chart-grid">
+      <article class="ri-chart-card">
+        <h3>Mood over time</h3>
+        <p class="cap">Your self-reported mood  |  1 to 5</p>
+        <div class="ri-chart"><canvas id="riMoodChart"></canvas></div>
+        <p class="cap" id="riMoodEmpty">No mood check-ins recorded yet.</p>
+      </article>
+
+      <article class="ri-chart-card">
+        <h3>Sleep duration</h3>
+        <p class="cap">Hours slept each day</p>
+        <div class="ri-chart"><canvas id="riSleepChart"></canvas></div>
+        <p class="cap" id="riSleepEmpty">No sleep history recorded yet.</p>
+      </article>
+
+      <article class="ri-chart-card">
+        <h3>Screen time</h3>
+        <p class="cap">Daily screen use  |  hours</p>
+        <div class="ri-chart"><canvas id="riScreenChart"></canvas></div>
+        <p class="cap" id="riScreenEmpty">No screen-time history recorded yet.</p>
+      </article>
+
+      <article class="ri-chart-card">
+        <h3>Sleep quality</h3>
+        <p class="cap">Your reported sleep quality  |  1 to 10</p>
+        <div class="ri-chart"><canvas id="riQualityChart"></canvas></div>
+        <p class="cap" id="riQualityEmpty">No sleep-quality history recorded yet.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="card ri-section">
+    <div class="ri-section-heading">
+      <div>
+        <p class="eyebrow">MODEL AND SCREENING RESULTS</p>
+        <h2>Your assessment history</h2>
+        <p class="cap">
+          Each source is displayed independently. Their values are not
+          combined into one clinical score.
+        </p>
+      </div>
+    </div>
+
+    <div class="ri-model-grid">
+
+      <article class="ri-model-card">
+        <div class="ri-model-heading">
+          <div>
+            <p class="eyebrow">TEXT CLASSIFICATION</p>
+            <h3>MentalBERT</h3>
+          </div>
+          <span class="ri-symbol">MB</span>
+        </div>
+        <strong class="ri-model-value" id="riMbValue">Not yet available</strong>
+        <p class="cap" id="riMbMeta">Analyse a journal entry to begin.</p>
+        <div class="ri-chart"><canvas id="riMbChart"></canvas></div>
+        <p class="cap" id="riMbEmpty">No saved text analyses yet.</p>
+        <div id="riMbHistory" class="ri-history"></div>
+        <div class="ri-disclaimer">
+          Experimental text classification. Model confidence is not the
+          probability that a person has a mental-health condition.
+        </div>
+      </article>
+
+      <article class="ri-model-card">
+        <div class="ri-model-heading">
+          <div>
+            <p class="eyebrow">LIFESTYLE MODEL</p>
+            <h3>XGBoost</h3>
+          </div>
+          <span class="ri-symbol">XGB</span>
+        </div>
+        <strong class="ri-model-value" id="riXgbValue">Not yet available</strong>
+        <p class="cap" id="riXgbMeta">Save a daily check-in to generate an estimate.</p>
+        <div class="ri-chart"><canvas id="riXgbChart"></canvas></div>
+        <p class="cap" id="riXgbEmpty">No saved lifestyle estimates yet.</p>
+        <div class="ri-disclaimer">
+          This model was trained on synthetic data. Its output is
+          experimental and is excluded from symptom-screening interpretation.
+        </div>
+      </article>
+
+      <article class="ri-model-card">
+        <div class="ri-model-heading">
+          <div>
+            <p class="eyebrow">DEPRESSION SYMPTOM SCREENING</p>
+            <h3>PHQ-9</h3>
+          </div>
+          <span class="ri-symbol">PHQ</span>
+        </div>
+        <strong class="ri-model-value" id="riPhqValue">Not yet completed</strong>
+        <p class="cap" id="riPhqMeta">Complete PHQ-9 to view your result.</p>
+        <p class="ri-band" id="riPhqBand"></p>
+        <div class="ri-chart"><canvas id="riPhqChart"></canvas></div>
+        <p class="cap" id="riPhqEmpty">No PHQ-9 history yet.</p>
+        <div id="riPhqItem9"></div>
+        <div class="ri-disclaimer">
+          PHQ-9 is a symptom-screening instrument, not a diagnosis.
+        </div>
+      </article>
+
+      <article class="ri-model-card">
+        <div class="ri-model-heading">
+          <div>
+            <p class="eyebrow">ANXIETY SYMPTOM SCREENING</p>
+            <h3>GAD-7</h3>
+          </div>
+          <span class="ri-symbol">GAD</span>
+        </div>
+        <strong class="ri-model-value" id="riGadValue">Not yet completed</strong>
+        <p class="cap" id="riGadMeta">Complete GAD-7 to view your result.</p>
+        <p class="ri-band" id="riGadBand"></p>
+        <div class="ri-chart"><canvas id="riGadChart"></canvas></div>
+        <p class="cap" id="riGadEmpty">No GAD-7 history yet.</p>
+        <div class="ri-disclaimer">
+          GAD-7 is a symptom-screening instrument, not a diagnosis.
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+
+
+  <section class="card ri-disclaimer ri-final-note">
+    <h3>Understanding your results</h3>
+    <p>
+      MentalBERT analyses language in journal reflections. XGBoost
+      estimates a lifestyle-related target. PHQ-9 and GAD-7 measure
+      self-reported symptoms using separate questionnaires.
+    </p>
+    <p>
+      Different results do not necessarily contradict one another.
+      A Normal text classification does not invalidate symptoms reported
+      in a questionnaire. None of these tools can establish a diagnosis
+      or determine immediate safety by itself.
+    </p>
+    <p>
+      Discuss persistent or concerning symptoms with a qualified
+      mental-health professional.
+    </p>
+    <a href="#screening">Return to screening</a>
+    <span>  |  </span>
+    <a href="#support">Explore support resources</a>
+  </section>
+
+</main>
 
 
     </div>
@@ -1440,7 +2090,6 @@ async function saveCheckin(){
     return;
   }
 
-  // These names and values match the FastAPI/XGBoost request schema exactly.
   const xgboostFeatures={
     daily_screen_time_hours:screen,
     phone_usage_before_sleep_minutes:phoneBeforeSleep,
@@ -1450,15 +2099,49 @@ async function saveCheckin(){
     physical_activity_minutes:activity
   };
 
+  if(!Array.isArray(userData.checkins))userData.checkins=[];
+
+  const existingIndex=userData.checkins.findIndex(r=>r.date===date);
+  const existingRecord=existingIndex>=0?userData.checkins[existingIndex]:null;
+
+  // Persist the daily record first. XGBoost is an optional follow-up.
+  const record={
+    date,
+    mood:selectedMood,
+    sleep,
+    screen,
+    steps:Number.isFinite(existingRecord?.steps)?existingRecord.steps:null,
+    bedtime,
+    wake_time:wakeTime,
+    ...xgboostFeatures,
+    xgboost_features:xgboostFeatures,
+    lifestyle_prediction:null,
+    lifestyle_prediction_status:"pending",
+    lifestyle_prediction_scale:"1-10 experimental estimate",
+    lifestyle_prediction_model:"XGBoost Lifestyle Stress Regressor",
+    lifestyle_prediction_outside_training_range:[],
+    lifestyle_prediction_warning:"The check-in is saved; the optional estimate is pending."
+  };
+
+  if(existingIndex>=0)userData.checkins[existingIndex]=record;
+  else userData.checkins.push(record);
+
+  syncDataFromRecords();
+  saveUserData();
+  render();
+
   button.disabled=true;
   const originalButtonText=button.textContent;
-  button.textContent="Analysing lifestyle data…";
+  button.textContent="Getting optional estimateâ€¦";
+
+  let prediction=null;
 
   try{
     const response=await fetch("http://127.0.0.1:8000/predict-lifestyle",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(xgboostFeatures)
+      body:JSON.stringify(xgboostFeatures),
+      cache:"no-store"
     });
 
     let result={};
@@ -1472,48 +2155,40 @@ async function saveCheckin(){
       throw new Error(detail);
     }
 
-    const prediction=Number(result.predicted_stress_level);
-    if(!Number.isFinite(prediction)){
+    const rawPrediction=result.predicted_stress_level;
+    const predictionValue=Number(rawPrediction);
+
+    if(rawPrediction===null||rawPrediction===undefined||rawPrediction===""||!Number.isFinite(predictionValue)){
       throw new Error("The API response did not contain a valid predicted_stress_level.");
     }
 
-    const existingIndex=userData.checkins.findIndex(r=>r.date===date);
-    const existingRecord=existingIndex>=0?userData.checkins[existingIndex]:null;
-
-    // Keep old dashboard fields, and store the actual model response with the check-in.
-    const record={
-      date,
-      mood:selectedMood,
-      sleep,
-      screen,
-      steps:Number.isFinite(existingRecord?.steps)?existingRecord.steps:null,
-      bedtime,
-      wake_time:wakeTime,
-      ...xgboostFeatures,
-      xgboost_features:xgboostFeatures,
-      lifestyle_prediction:prediction,
+    Object.assign(record,{
+      lifestyle_prediction:predictionValue,
+      lifestyle_prediction_status:"available",
       lifestyle_prediction_scale:result.scale||"1-10 experimental estimate",
       lifestyle_prediction_model:result.model||"XGBoost Lifestyle Stress Regressor",
       lifestyle_prediction_outside_training_range:Array.isArray(result.outside_training_range)?result.outside_training_range:[],
       lifestyle_prediction_warning:result.warning||"Research estimate only; not a diagnosis.",
       lifestyle_prediction_created_at:new Date().toISOString()
-    };
+    });
 
-    if(existingIndex>=0)userData.checkins[existingIndex]=record;
-    else userData.checkins.push(record);
-
-    syncDataFromRecords();
+    prediction=predictionValue;
     saveUserData();
     render();
 
-    showCheckinSaved(prediction);
-
   }catch(error){
-    toast("Prediction failed: "+(error.message||"Check that the backend is running, then try again."));
+    // The check-in remains saved even when the model server is unavailable.
+    record.lifestyle_prediction=null;
+    record.lifestyle_prediction_status="unavailable";
+    record.lifestyle_prediction_warning="The check-in was saved, but the XGBoost estimate is unavailable right now.";
+    saveUserData();
+    render();
   }finally{
     button.disabled=false;
     button.textContent=originalButtonText;
   }
+
+  showCheckinSaved(prediction);
 }
 let checkinSuccessTimer=null;
 function showCheckinSaved(prediction){
@@ -1523,20 +2198,24 @@ function showCheckinSaved(prediction){
     return;
   }
   if(checkinSuccessTimer!==null)window.clearTimeout(checkinSuccessTimer);
+
   const predictionLabel=$("ciSavedPrediction");
-  if(predictionLabel&&Number.isFinite(Number(prediction))){
-    predictionLabel.textContent="Lifestyle model estimate: "+Number(prediction).toFixed(2)+" / 10";
+  if(predictionLabel){
+    predictionLabel.textContent=Number.isFinite(prediction)
+      ? "Lifestyle model estimate: "+Number(prediction).toFixed(2)+" / 10"
+      : "XGBoost estimate unavailable right now. Your check-in is safely saved.";
   }
+
   overlay.hidden=false;
   requestAnimationFrame(()=>overlay.classList.add("is-visible"));
+
   checkinSuccessTimer=window.setTimeout(()=>{
     overlay.classList.remove("is-visible");
     overlay.hidden=true;
     location.hash="overview";
     checkinSuccessTimer=null;
-  },1900);
+  },2200);
 }
-
 // -----------------------------------------------------------------------------
 const $=id=>document.getElementById(id),css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const K={pink:"#ff5c8a",yel:"#ffc933",teal:"#0bb5a1",blue:"#7a5cc4",orange:"#ff8a4c",lime:"#8bd96b"};
@@ -1544,7 +2223,7 @@ const LV={Low:["Clear skies",K.teal],Moderate:["Patchy clouds",K.yel],High:["Sto
 const MOODS=[["Rough",1,K.pink],["Low",2,K.orange],["Okay",3,K.yel],["Good",4,K.lime],["Great",5,K.teal]];
 const HAB={sleep:["Sleep",K.teal,"low"],screen:["Screen time",K.blue,"high"],steps:["Steps",K.orange,"low"]};
 const IC={overview:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',checkin:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9z"/><path d="M9 14l2 2 4-4"/>',screening:'<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',journal:'<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 21V5"/>',support:'<path d="M12 20s-7-4.4-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.6-7 10-7 10z"/>',campus:'<path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/>',results:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',profile:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/>'};
-const ROUTES=[["overview","Overview","Your personal wellbeing overview","search overview home trends sleep mood charts"],["checkin","Daily check-in","Two minutes for how you feel","check mood write feel entry"],["screening","Screening","Two short questionnaires to cross-check","screening questionnaire phq gad anxiety depression"],["journal","My journal","Your entries and patterns","journal entries patterns history habits"],["support","Support resources","People who can help, any time","support help helpline counsellor book appointment"],["profile","My profile","What MindCare may use, and how it looks","profile settings privacy theme name consent reminder"]];
+const ROUTES=[["overview","Overview","Your personal wellbeing overview","search overview home trends sleep mood charts"],["checkin","Daily check-in","Two minutes for how you feel","check mood write feel entry"],["screening","Screening","Two short questionnaires to cross-check","screening questionnaire phq gad anxiety depression"],["journal","My journal","Your entries and patterns","journal entries patterns history habits"],["support","Support resources","People who can help, any time","support help helpline counsellor book appointment"],["results","Results & Insights","Your integrated assessment results and trends","results insights mentalbert xgboost phq gad assessment history"],["profile","My profile","What MindCare may use, and how it looks","profile settings privacy theme name consent reminder"]];
 let habit="sleep",charts={};
 const level=s=>s<25?"Low":s<50?"Moderate":"High";
 function devs(i){const c=x=>Math.min(1,Math.max(0,x));return{
@@ -1785,7 +2464,78 @@ function applyTheme(mode, rerender = true, persist = true) {
 
   if (rerender) render();
 }
-function render(){render0();applyLang();}
+function render(){
+  render0();
+  applyLang();
+  renderProfile();
+}
+
+function renderProfile(){
+  const table=$("basetbl");
+  if(!table)return;
+
+  const records=Array.isArray(userData.checkins)
+    ? userData.checkins
+    : [];
+
+  const average=selector=>{
+    const values=records
+      .map(selector)
+      .filter(v=>
+        v!==null &&
+        v!==undefined &&
+        v!=="" &&
+        Number.isFinite(Number(v))
+      )
+      .map(Number);
+
+    return values.length
+      ? values.reduce((sum,value)=>sum+value,0)/values.length
+      : null;
+  };
+
+  const fmt=(value,unit,decimals=1)=>
+    value===null
+      ? "Not recorded"
+      : value.toFixed(decimals)+unit;
+
+  const metrics=[
+    ["Mood",average(r=>r.mood)," / 5",1],
+    ["Sleep duration",average(r=>r.sleep ?? r.sleep_duration_hours)," hrs",1],
+    ["Sleep quality",average(r=>r.sleep_quality_score)," / 10",1],
+    ["Physical activity",average(r=>r.physical_activity_minutes)," min",0],
+    ["Screen time",average(r=>r.daily_screen_time_hours ?? r.screen)," hrs",1],
+    ["Phone use before sleep",average(r=>r.phone_usage_before_sleep_minutes)," min",0],
+    ["Caffeine intake",average(r=>r.caffeine_intake_cups)," cups",1]
+  ];
+
+  if(!records.length){
+    table.innerHTML=
+      '<p class="cap">No saved check-ins yet. Your averages will appear here after your first check-in.</p>';
+  }else{
+    table.innerHTML=metrics.map(([label,value,unit,decimals])=>
+      `<div class="profile-average-row">
+        <span>${label}</span>
+        <strong>${fmt(value,unit,decimals)}</strong>
+      </div>`
+    ).join("");
+  }
+
+  const meta=$("profileAverageMeta");
+
+  if(meta){
+    meta.textContent=records.length
+      ? `${records.length} saved check-in(s). Each average uses all available saved values for that measure.`
+      : "Averages across all saved check-ins. Missing values are excluded from each average.";
+  }
+
+  // Restore the signed-in account's saved preference selections.
+  document.querySelectorAll(
+    '#consent input[type="checkbox"][data-k]'
+  ).forEach(input=>{
+    input.checked=!!on[input.dataset.k];
+  });
+}
 function whyText(lv){
   if(learnDay<14)return"";
   const a=k=>{
@@ -2059,12 +2809,13 @@ const QS = {
         userData.screeningHistory = [];
       }
 
-      userData.screeningHistory.push({
+            userData.screeningHistory.push({
         questionnaire: qk,
         score,
         max: maxScore,
         band,
-        date
+        date,
+        phq9_item9_response: qk === "phq" ? answers[8] : null
       });
 
       userData.screeningHistory =
@@ -2245,11 +2996,23 @@ async function analyse() {
         const [predictedClass, predictedProbability] = highestPrediction;
 
         // 3. Save the journal entry with its predicted category
+                const analyzedAt = new Date().toISOString();
+
+        const mentalbertResult = {
+          predicted_class: result.predicted_class,
+          confidence: result.confidence,
+          class_probabilities: result.class_probabilities,
+          model: result.model || "MentalBERT",
+          disclaimer: result.disclaimer || "Experimental text classification; not a diagnosis.",
+          analyzed_at: analyzedAt
+        };
+
         entries.unshift({
           text: raw,
           lv: "Text analysis: " + result.predicted_class,
           c: K.blue,
-          date: new Date().toISOString()
+          date: analyzedAt,
+          mentalbert: mentalbertResult
         });
 
         saveUserData();
@@ -2469,6 +3232,527 @@ function initSupportPage(){
     };
   }
 }
+function renderResults(){
+  const checkins = Array.isArray(userData.checkins) ? userData.checkins.slice() : [];
+  const entries = Array.isArray(userData.entries) ? userData.entries.slice() : [];
+  const screening = Array.isArray(userData.screeningHistory)
+    ? userData.screeningHistory.slice()
+    : [];
+
+  const hasNumber = value =>
+    value !== null && value !== undefined && value !== "" &&
+    Number.isFinite(Number(value));
+
+  const safe = value => esc(String(value ?? ""));
+
+  const dateKey = value => {
+    if(!value)return "";
+    const s=String(value);
+    if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;
+    const d=new Date(s);
+    if(Number.isNaN(d.getTime()))return "";
+    return d.getFullYear()+"-"+
+      String(d.getMonth()+1).padStart(2,"0")+"-"+
+      String(d.getDate()).padStart(2,"0");
+  };
+
+  const timeOf = value => {
+    const key=dateKey(value);
+    if(key)return new Date(key+"T12:00:00").getTime();
+    const parsed=Date.parse(value || "");
+    return Number.isFinite(parsed)?parsed:0;
+  };
+
+  const dateLabel = value => {
+    const key=dateKey(value);
+    if(!key)return "Date unavailable";
+    return new Date(key+"T12:00:00").toLocaleDateString("en-IN",{
+      day:"numeric",month:"short",year:"numeric"
+    });
+  };
+
+  const avg = values => {
+    const valid=values.filter(hasNumber).map(Number);
+    return valid.length?valid.reduce((a,b)=>a+b,0)/valid.length:null;
+  };
+
+  const readNumber = (record, keys) => {
+    for(const key of keys){
+      if(hasNumber(record?.[key]))return Number(record[key]);
+    }
+    return null;
+  };
+
+  const orderedCheckins = checkins
+    .filter(r=>r && dateKey(r.date))
+    .sort((a,b)=>dateKey(a.date).localeCompare(dateKey(b.date)));
+
+  const mbRows = entries
+    .filter(e=>e && e.mentalbert && e.mentalbert.predicted_class)
+    .sort((a,b)=>timeOf(a.mentalbert.analyzed_at || a.date)-
+                  timeOf(b.mentalbert.analyzed_at || b.date));
+
+  const xgbRows = orderedCheckins
+    .filter(r=>hasNumber(r.lifestyle_prediction));
+
+  const screeningRows = screening
+    .filter(r=>r && (r.questionnaire==="phq" || r.questionnaire==="gad"))
+    .sort((a,b)=>timeOf(a.date)-timeOf(b.date));
+
+  const phqRows = screeningRows.filter(r=>r.questionnaire==="phq");
+  const gadRows = screeningRows.filter(r=>r.questionnaire==="gad");
+
+  const moodValues = orderedCheckins.map(r=>readNumber(r,["mood"]));
+  const sleepValues = orderedCheckins.map(r=>readNumber(r,["sleep","sleep_duration_hours"]));
+  const screenValues = orderedCheckins.map(r=>readNumber(r,["daily_screen_time_hours","screen"]));
+  const qualityValues = orderedCheckins.map(r=>readNumber(r,["sleep_quality_score"]));
+
+  const setText = (id,value) => {
+    const el=$(id);
+    if(el)el.textContent=value;
+  };
+
+  const latest = rows => rows.length?rows[rows.length-1]:null;
+
+  // Check-in days and consecutive-day streaks. Login days are not counted.
+  const dayKeys = [...new Set(orderedCheckins.map(r=>dateKey(r.date)))].sort();
+  const dayNumbers = dayKeys.map(k=>Math.floor(new Date(k+"T00:00:00Z").getTime()/86400000));
+
+  let longestStreak=0,run=0,previous=null;
+  dayNumbers.forEach(day=>{
+    run=(previous!==null && day===previous+1)?run+1:1;
+    longestStreak=Math.max(longestStreak,run);
+    previous=day;
+  });
+
+  const today=new Date();
+  const todayKey=today.getFullYear()+"-"+
+    String(today.getMonth()+1).padStart(2,"0")+"-"+
+    String(today.getDate()).padStart(2,"0");
+  const todayNumber=Math.floor(new Date(todayKey+"T00:00:00Z").getTime()/86400000);
+
+  let currentStreak=0;
+  if(dayNumbers.length){
+    const lastDay=dayNumbers[dayNumbers.length-1];
+    if(todayNumber-lastDay<=1){
+      currentStreak=1;
+      for(let i=dayNumbers.length-1;i>0;i--){
+        if(dayNumbers[i]===dayNumbers[i-1]+1)currentStreak++;
+        else break;
+      }
+    }
+  }
+
+  const averageMood=avg(moodValues);
+  const averageSleep=avg(sleepValues);
+
+  setText("riTracked",String(dayKeys.length));
+  setText("riStreak",String(currentStreak));
+  setText("riMoodAverage",averageMood===null?" - ":averageMood.toFixed(1)+"/5");
+  setText("riSleepAverage",averageSleep===null?" - ":averageSleep.toFixed(1)+" h");
+
+  const firstDate=dayKeys.length?dateLabel(dayKeys[0]):"No check-ins yet";
+  const lastDate=dayKeys.length?dateLabel(dayKeys[dayKeys.length-1]):"";
+  setText("riPeriod",dayKeys.length?
+    `${dayKeys.length} recorded check-in day(s)  |  ${firstDate}  -  ${lastDate}  |  Longest streak: ${longestStreak} day(s)`:
+    "Your first saved daily check-in will start your timeline.");
+
+  // Chart utilities: use every available saved observation.
+  const noChart = (canvasId,emptyId,hasData) => {
+    const canvas=$(canvasId);
+    const empty=$(emptyId);
+    if(canvas&&canvas.parentElement)canvas.parentElement.hidden=!hasData;
+    if(empty)empty.hidden=!!hasData;
+    if(!hasData && charts[canvasId]){
+      charts[canvasId].destroy();
+      delete charts[canvasId];
+    }
+  };
+
+  const drawLine = (canvasId,emptyId,labels,datasets,axis={}) => {
+    const valid=datasets.some(ds=>ds.data.some(v=>hasNumber(v)));
+    noChart(canvasId,emptyId,valid);
+    if(!valid || typeof Chart==="undefined")return;
+
+    mk(canvasId,{
+      type:"line",
+      data:{
+        labels,
+        datasets:datasets.map(ds=>({
+          ...ds,
+          tension:.28,
+          fill:ds.fill!==false,
+          borderWidth:3,
+          pointRadius:3,
+          spanGaps:false
+        }))
+      },
+      options:{
+        responsive:true,
+        maintainAspectRatio:false,
+        interaction:{mode:"index",intersect:false},
+        scales:{
+          y:{
+            min:axis.min??0,
+            max:axis.max,
+            suggestedMax:axis.suggestedMax,
+            grid:{color:"rgba(120,135,170,.18)"},
+            ticks:{maxTicksLimit:6}
+          },
+          x:{
+            grid:{display:false},
+            ticks:{maxTicksLimit:6,maxRotation:0}
+          }
+        },
+        plugins:{
+          legend:{
+            display:datasets.length>1,
+            position:"bottom"
+          }
+        }
+      }
+    });
+  };
+
+  const dateLabels=orderedCheckins.map(r=>dateLabel(r.date));
+
+  drawLine("riMoodChart","riMoodEmpty",dateLabels,[{
+    label:"Reported mood",
+    data:moodValues,
+    borderColor:K.blue,
+    backgroundColor:K.blue+"22"
+  }],{min:1,max:5});
+
+  drawLine("riSleepChart","riSleepEmpty",dateLabels,[{
+    label:"Sleep duration (hours)",
+    data:sleepValues,
+    borderColor:K.teal,
+    backgroundColor:K.teal+"22"
+  }],{min:0});
+
+  drawLine("riScreenChart","riScreenEmpty",dateLabels,[{
+    label:"Screen time (hours)",
+    data:screenValues,
+    borderColor:K.orange,
+    backgroundColor:K.orange+"22"
+  }],{min:0});
+
+  drawLine("riQualityChart","riQualityEmpty",dateLabels,[{
+    label:"Sleep quality",
+    data:qualityValues,
+    borderColor:K.pink,
+    backgroundColor:K.pink+"22"
+  }],{min:1,max:10});
+
+  // MentalBERT: latest category plus frequency of categories over history.
+  const latestMb=latest(mbRows);
+  if(latestMb){
+    const result=latestMb.mentalbert;
+    setText("riMbValue",result.predicted_class);
+    const confidence=Number(result.confidence);
+    const confidencePct=Number.isFinite(confidence)
+      ? (confidence<=1?confidence*100:confidence)
+      : null;
+    setText("riMbMeta",
+      `${confidencePct===null?"Confidence unavailable":"Model confidence: "+confidencePct.toFixed(2)+"%"}  |  ${mbRows.length} saved analysis/analyses`
+    );
+
+    const counts={};
+    mbRows.forEach(row=>{
+      const label=String(row.mentalbert.predicted_class);
+      counts[label]=(counts[label]||0)+1;
+    });
+
+    const distribution=Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+    noChart("riMbChart","riMbEmpty",distribution.length>0);
+
+    if(distribution.length && typeof Chart!=="undefined"){
+      mk("riMbChart",{
+        type:"doughnut",
+        data:{
+          labels:distribution.map(x=>x[0]),
+          datasets:[{
+            data:distribution.map(x=>x[1]),
+            backgroundColor:[K.blue,K.teal,K.pink,K.orange,K.yel,K.lime],
+            borderColor:css("--card"),
+            borderWidth:3
+          }]
+        },
+        options:{
+          responsive:true,
+          maintainAspectRatio:false,
+          plugins:{legend:{position:"bottom"}}
+        }
+      });
+    }
+
+    $("riMbHistory").innerHTML=distribution.map(([label,count])=>
+      `<div class="ri-history-row"><span>${safe(label)}</span><b>${count}</b></div>`
+    ).join("");
+  }else{
+    setText("riMbValue","Not yet available");
+    setText("riMbMeta","Analyse a journal reflection to generate a result.");
+    $("riMbHistory").innerHTML="";
+    noChart("riMbChart","riMbEmpty",false);
+  }
+
+  // XGBoost: historical experimental estimates, not a clinical measure.
+  const latestXgb=latest(xgbRows);
+  if(latestXgb){
+    setText("riXgbValue",Number(latestXgb.lifestyle_prediction).toFixed(2)+"/10");
+    setText("riXgbMeta",
+      `${xgbRows.length} saved estimate(s)  |  Latest: ${dateLabel(latestXgb.lifestyle_prediction_created_at || latestXgb.date)}`
+    );
+  }else{
+    setText("riXgbValue","Not yet available");
+    setText("riXgbMeta","Save a daily check-in to generate a lifestyle estimate.");
+  }
+
+  drawLine("riXgbChart","riXgbEmpty",
+    xgbRows.map(r=>dateLabel(r.lifestyle_prediction_created_at || r.date)),
+    [{
+      label:"Experimental estimate",
+      data:xgbRows.map(r=>Number(r.lifestyle_prediction)),
+      borderColor:K.blue,
+      backgroundColor:K.blue+"22"
+    }],
+    {min:0,max:10}
+  );
+
+  // PHQ-9: scores and item 9 follow-up are always handled separately.
+  const latestPhq=latest(phqRows);
+  if(latestPhq){
+    setText("riPhqValue",`${latestPhq.score}/${latestPhq.max||27}`);
+    setText("riPhqMeta",
+      `${phqRows.length} completed assessment(s)  |  Latest: ${dateLabel(latestPhq.date)}`
+    );
+    setText("riPhqBand",latestPhq.band||"Band not recorded");
+
+    const item9=latestPhq.phq9_item9_response;
+    const item9El=$("riPhqItem9");
+    if(hasNumber(item9)&&Number(item9)>0){
+      item9El.innerHTML=
+        `<div class="ri-safety-note"><b>Support follow-up indicated</b><p>A response above zero was recorded for PHQ-9 item 9. Please connect promptly with a trained mental-health professional. This questionnaire cannot determine immediate safety by itself. <a href="#support">View support resources</a>.</p></div>`;
+    }else if(hasNumber(item9)){
+      item9El.textContent="PHQ-9 item 9 response: 0 (Not at all).";
+    }else{
+      item9El.textContent="Item 9 was not stored for this historical assessment.";
+    }
+  }else{
+    setText("riPhqValue","Not yet completed");
+    setText("riPhqMeta","Complete PHQ-9 to view your result.");
+    setText("riPhqBand","");
+    setText("riPhqItem9","");
+  }
+
+  drawLine("riPhqChart","riPhqEmpty",
+    phqRows.map(r=>dateLabel(r.date)),
+    [{
+      label:"PHQ-9 score",
+      data:phqRows.map(r=>Number(r.score)),
+      borderColor:K.pink,
+      backgroundColor:K.pink+"22"
+    }],
+    {min:0,max:27}
+  );
+
+  // GAD-7.
+  const latestGad=latest(gadRows);
+  if(latestGad){
+    setText("riGadValue",`${latestGad.score}/${latestGad.max||21}`);
+    setText("riGadMeta",
+      `${gadRows.length} completed assessment(s)  |  Latest: ${dateLabel(latestGad.date)}`
+    );
+    setText("riGadBand",latestGad.band||"Band not recorded");
+  }else{
+    setText("riGadValue","Not yet completed");
+    setText("riGadMeta","Complete GAD-7 to view your result.");
+    setText("riGadBand","");
+  }
+
+  drawLine("riGadChart","riGadEmpty",
+    gadRows.map(r=>dateLabel(r.date)),
+    [{
+      label:"GAD-7 score",
+      data:gadRows.map(r=>Number(r.score)),
+      borderColor:K.teal,
+      backgroundColor:K.teal+"22"
+    }],
+    {min:0,max:21}
+  );
+
+  // Personal observations compare the full saved history, from first to latest.
+  const insights=[];
+  const early=orderedCheckins.slice(0,Math.min(3,orderedCheckins.length));
+  const recent=orderedCheckins.slice(-Math.min(3,orderedCheckins.length));
+
+  const earlyMood=avg(early.map(r=>readNumber(r,["mood"])));
+  const recentMood=avg(recent.map(r=>readNumber(r,["mood"])));
+  const earlySleep=avg(early.map(r=>readNumber(r,["sleep","sleep_duration_hours"])));
+  const recentSleep=avg(recent.map(r=>readNumber(r,["sleep","sleep_duration_hours"])));
+  const earlyScreen=avg(early.map(r=>readNumber(r,["daily_screen_time_hours","screen"])));
+  const recentScreen=avg(recent.map(r=>readNumber(r,["daily_screen_time_hours","screen"])));
+
+  const screeningBandRank=band=>{
+    const value=String(band||"").toLowerCase();
+    if(!value)return null;
+    if(value.includes("severe"))return 3;
+    if(value.includes("moderate"))return 2;
+    if(value.includes("mild"))return 1;
+    if(/minimal|none|normal|low/.test(value))return 0;
+    return null;
+  };
+
+  const screeningEvidence=[
+    latestPhq?{name:"PHQ-9",band:latestPhq.band||"",rank:screeningBandRank(latestPhq.band)}:null,
+    latestGad?{name:"GAD-7",band:latestGad.band||"",rank:screeningBandRank(latestGad.band)}:null
+  ].filter(Boolean);
+
+  const rankedEvidence=screeningEvidence.filter(item=>item.rank!==null);
+  const item9Value=latestPhq?latestPhq.phq9_item9_response:null;
+  const item9NeedsFollowup=hasNumber(item9Value)&&Number(item9Value)>0;
+
+  let overallStatus="Limited screening data";
+  let overallTitle="Your screening history is still building";
+  let overallText="Complete PHQ-9 and GAD-7 to add self-reported symptom information. Your daily check-ins and journal can add personal context, but they do not replace screening or a conversation with a professional.";
+  let primaryAssessment="No screening result yet";
+  let primaryReason="PHQ-9 and GAD-7 have not yet been recorded. They assess different symptom areas and should be interpreted separately.";
+
+  if(rankedEvidence.length){
+    const highestRank=Math.max(...rankedEvidence.map(item=>item.rank));
+    const mostElevated=rankedEvidence.filter(item=>item.rank===highestRank);
+    const highestBand=mostElevated[0].band||"recorded";
+    const names=mostElevated.map(item=>item.name);
+    primaryAssessment=names.join(" + ")+" · "+highestBand;
+
+    if(mostElevated.length===2){
+      primaryReason="Both latest questionnaires have the same recorded band. They cover different symptom areas; their raw scores are not added or compared.";
+    }else{
+      primaryReason=screeningEvidence.length===1
+        ? mostElevated[0].name+" is the available completed screening. The other questionnaire is not yet recorded."
+        : mostElevated[0].name+" has the most elevated recorded band among your latest completed screenings. This helps identify which symptom area may deserve discussion; it is not a diagnosis.";
+    }
+
+    if(highestRank>=2){
+      overallStatus="Follow-up may be helpful";
+      overallTitle="Some reported symptoms may deserve further discussion";
+      overallText="Your latest "+names.join(" and ")+" result includes a "+highestBand+" screening band. Consider discussing the reported experiences with a qualified mental-health professional, especially if they persist or affect daily life. This is a screening interpretation, not a diagnosis.";
+    }else if(highestRank===1){
+      overallStatus="Continue to monitor";
+      overallTitle="Some symptoms are reported in your screening history";
+      overallText="Your latest completed screening includes a mild band. Keep noticing how you feel over time, and consider professional support if symptoms persist, worsen or interfere with daily life.";
+    }else{
+      overallStatus="No elevated band recorded";
+      overallTitle="No elevated screening band appears in the latest completed results";
+      overallText="The latest completed questionnaire bands are not elevated. This does not rule out distress or mean that support is unnecessary; your own experience matters, and these questionnaires are not diagnostic.";
+    }
+  }else if(screeningEvidence.length){
+    overallStatus="Review screening results";
+    overallTitle="Screening records are available, but band details are incomplete";
+    overallText="One or more questionnaire scores are saved, but the band label is unavailable. Review each score using its own questionnaire scale; do not combine PHQ-9 and GAD-7 points.";
+    primaryAssessment=screeningEvidence.map(item=>item.name).join(" + ");
+    primaryReason="These are the available screening records. Their raw scores use different scales and are not directly comparable.";
+  }
+
+  if(item9NeedsFollowup){
+    overallStatus="Prompt support follow-up";
+    overallTitle="Please follow up on your PHQ-9 response";
+    overallText="A response above zero was recorded for PHQ-9 item 9. Please connect promptly with a trained mental-health professional or trusted support person. If you feel in immediate danger or cannot keep yourself safe, seek urgent local emergency help. A questionnaire cannot determine immediate safety by itself.";
+    primaryAssessment="PHQ-9 · item 9 needs follow-up";
+    primaryReason="Your latest saved PHQ-9 item 9 response was above zero. This specific response merits personal follow-up regardless of the total score or MentalBERT category.";
+  }
+
+  const supporting=[];
+  if(earlyMood!==null&&recentMood!==null&&orderedCheckins.length>=2){
+    const delta=recentMood-earlyMood;
+    const direction=delta>0.05?"increased":delta< -0.05?"decreased":"remained similar";
+    supporting.push("Average reported mood "+direction+" from "+earlyMood.toFixed(1)+"/5 in your earliest check-ins to "+recentMood.toFixed(1)+"/5 in your most recent check-ins.");
+    insights.push({
+      title:"Reported mood",
+      text:"Average recorded mood "+direction+" from "+earlyMood.toFixed(1)+"/5 to "+recentMood.toFixed(1)+"/5 when comparing the earliest and most recent check-in groups."
+    });
+  }
+
+  if(earlySleep!==null&&recentSleep!==null&&orderedCheckins.length>=2){
+    const delta=recentSleep-earlySleep;
+    const direction=delta>0.15?"increased":delta< -0.15?"decreased":"remained similar";
+    supporting.push("Average sleep "+direction+" from "+earlySleep.toFixed(1)+" to "+recentSleep.toFixed(1)+" hours.");
+    insights.push({
+      title:"Sleep duration",
+      text:"Average recorded sleep "+direction+" from "+earlySleep.toFixed(1)+" to "+recentSleep.toFixed(1)+" hours across the earliest and most recent check-ins."
+    });
+  }
+
+  if(earlyScreen!==null&&recentScreen!==null&&orderedCheckins.length>=2){
+    const delta=recentScreen-earlyScreen;
+    const direction=delta>0.15?"increased":delta< -0.15?"decreased":"remained similar";
+    supporting.push("Average daily screen time "+direction+" from "+earlyScreen.toFixed(1)+" to "+recentScreen.toFixed(1)+" hours.");
+    insights.push({
+      title:"Digital habits",
+      text:"Average recorded screen time "+direction+" from "+earlyScreen.toFixed(1)+" to "+recentScreen.toFixed(1)+" hours across the earliest and most recent check-ins."
+    });
+  }
+
+  const compareScreening=(rows,label)=>{
+    if(rows.length<2)return;
+    const first=Number(rows[0].score),lastScore=Number(rows[rows.length-1].score);
+    if(!Number.isFinite(first)||!Number.isFinite(lastScore))return;
+    const delta=lastScore-first;
+    const movement=delta>0?"increased":delta<0?"decreased":"remained unchanged";
+    insights.push({
+      title:label+" trend",
+      text:"Your "+label+" score "+movement+" from "+first+" to "+lastScore+" across saved assessments. Interpret this change using the "+label+" scale only."
+    });
+  };
+
+  compareScreening(phqRows,"PHQ-9");
+  compareScreening(gadRows,"GAD-7");
+
+  if(latestMb){
+    const label=String(latestMb.mentalbert.predicted_class);
+    supporting.push("MentalBERT's latest journal category is "+label+"; this is experimental text classification, not a symptom-severity score.");
+    insights.push({
+      title:"Journal reflections",
+      text:"MentalBERT has classified "+mbRows.length+" saved journal reflection(s). The latest category is "+label+". This experimental language classification is supporting context only and does not override questionnaire responses."
+    });
+  }
+
+  if(!supporting.length){
+    supporting.push("More daily check-ins and journal reflections will help show personal patterns alongside your separate screening results.");
+  }
+
+  setText("riOverallStatus",overallStatus);
+  setText("riOverallTitle",overallTitle);
+  setText("riOverallText",overallText);
+  setText("riPrimaryAssessment",primaryAssessment);
+  setText("riPrimaryReason",primaryReason);
+  setText("riSupportingPattern",supporting.join(" "));
+  setText("riCoverage",
+    dayKeys.length+" check-in day(s) · "+
+    mbRows.length+" journal analysis/analyses · "+
+    phqRows.length+" PHQ-9 assessment(s) · "+
+    gadRows.length+" GAD-7 assessment(s)"
+  );
+  setText("riOverallLimit",
+    "PHQ-9 and GAD-7 are the main symptom-screening evidence and assess different areas. MentalBERT is experimental text classification. Daily check-ins provide self-reported context. XGBoost is displayed separately and excluded from this summary because it was trained on synthetic data."
+  );
+
+  const insightEl=$("riInsights");
+  if(insightEl){
+    if(!insights.length){
+      insightEl.innerHTML=
+        '<div class="ri-insight"><strong>Your patterns are still building</strong><p>Save check-ins and complete questionnaires over time. Your observations will be updated from your full saved history.</p></div>';
+    }else{
+      insightEl.innerHTML=insights.map(item=>
+        `<article class="ri-insight"><strong>${safe(item.title)}</strong><p>${safe(item.text)}</p></article>`
+      ).join("");
+    }
+  }
+
+  setText("riGeneratedAt",
+    "Updated from all saved records  |  "+new Date().toLocaleString("en-IN")
+  );
+}
 function build(){
   $("nav").innerHTML=ROUTES.map(r=>`<a href="#${r[0]}" data-r="${r[0]}"><svg viewBox="0 0 24 24" aria-hidden="true">${IC[r[0]]}</svg><span>${r[1]}</span></a>`).join("");
   $("moods").innerHTML=MOODS.map(m=>`<button class="mood" data-v="${m[1]}" style="--c:${m[2]}"><i></i>${m[0]}</button>`).join("");
@@ -2480,7 +3764,7 @@ function build(){
   });
   $("tabs").innerHTML=Object.keys(HAB).map(k=>`<button class="tab" role="tab" data-k="${k}">${HAB[k][0]}</button>`).join("");
   $("tabs").onclick=e=>{const b=e.target.closest(".tab");if(b){habit=b.dataset.k;render();}};
-  const S=[["mood","Mood and what I write","Read by the text model"],["sleep","Sleep","Hours slept"],["steps","Activity","Daily steps"],["screen","Screen time","Hours on screen"]];
+  const S=[["mood","Mood","Included in the on-device wellbeing score"],["sleep","Sleep duration","Included in the on-device wellbeing score"],["steps","Legacy step counts","Applies only to older saved step-count records"],["screen","Screen time","Included in the on-device wellbeing score"]];
   $("consent").innerHTML=S.map(s=>`<label class="row2"><span><b>${s[1]}</b><br><small>${s[2]}</small></span><input type="checkbox" data-k="${s[0]}" checked></label>`).join("");
   $("consent").onchange=e=>{on[e.target.dataset.k]=e.target.checked;saveUserData();render();};
   $("theme").onchange=e=>applyTheme(e.target.value);
@@ -2499,7 +3783,7 @@ function build(){
         matchMedia("(prefers-color-scheme: dark)").matches);
 
     applyTheme(isDark ? "light" : "dark");
-  };  $("basetbl").innerHTML=[["Mood",base.mood+" of 5"],["Sleep",base.sleep+" hrs"],["Steps",base.steps>0?base.steps.toLocaleString("en-IN"):"Not collected"],["Screen time",base.screen+" hrs"]].map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("");
+  };
   $("del").onclick=()=>{entries.length=0;renderEntries();$("delmsg").textContent="Your entries have been deleted.";};
   $("bb").onclick=breathe;initSupportPage();$("go").onclick=analyse;$("refresh").onclick=()=>{render();toast("Refreshed from your latest check-ins.");};
   $("pname").onchange=e=>{name=e.target.value.trim()||"friend";$("av").textContent=name[0].toUpperCase();saveUserData();render();};
@@ -2510,7 +3794,7 @@ function route(){
   const r=location.hash.slice(1),R=ROUTES.find(x=>x[0]===r)||ROUTES[0];
   document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.id==="p-"+R[0]));
   document.querySelectorAll("#nav a").forEach(a=>a.setAttribute("aria-current",a.dataset.r===R[0]?"page":"false"));
-  $("ptitle").textContent=R[1];$("psub").textContent=R[2];scrollTo(0,0);render();if(R[0]==="screening")renderScreeningHistory();
+  $("ptitle").textContent=R[1];$("psub").textContent=R[2];scrollTo(0,0);render();if(R[0]==="screening")renderScreeningHistory();if(R[0]==="results")renderResults();
 }
 build();addEventListener("hashchange",route);
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{updateThemeToggle();render();});
@@ -2570,13 +3854,14 @@ function signOut(){
   $("auth").hidden=false;setMode("login");location.hash="";$("ae").focus();
 }
 function authInit(){
+  $("out").onclick = signOut;
   $("tLogin").onclick=()=>setMode("login");$("tSign").onclick=()=>setMode("signup");
   $("af").onsubmit=submit;$("ap").oninput=meter;
   $("aeye").onclick=()=>{const h=$("ap").type==="password";$("ap").type=h?"text":"password";$("ac").type=h?"text":"password";$("aeye").textContent=h?"Hide":"Show";};
   $("afg").onclick=e=>{e.preventDefault();toast("Demo only. The real app would email you a reset link.");};
   let sess=null;try{sess=localStorage.getItem("mc_sess");}catch(e){}
   const a=getAcc()[sess];
-  if(sess&&a){loadUserData(sess);name=userData.profile?.name||a.name;$("pname").value=name;$("av").textContent=(name||"U")[0].toUpperCase();$("auth").hidden=true;render();}
+  if(sess&&a){loadUserData(sess);name=userData.profile?.name||a.name;$("pname").value=name;$("av").textContent=(name||"U")[0].toUpperCase();$("auth").hidden=true;render();if(location.hash==="#results")renderResults();}
 }
 authInit();
 
